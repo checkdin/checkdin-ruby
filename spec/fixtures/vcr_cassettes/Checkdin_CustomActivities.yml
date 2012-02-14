@@ -1,0 +1,47 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://app.checkd.in:443/api/v1/custom_activities?client_id=123456&client_secret=7890&custom_activity_node_id=1&email=muellermr@gmail.com
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - Ruby gem
+      content-length:
+      - '0'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.8.54
+      date:
+      - Tue, 14 Feb 2012 19:24:10 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"504422348827b80461a74d114bceb8f9"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      set-cookie:
+      - _checkdin_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWY2NTA3Nzk2Zjc1NWNlNTRiMDVkOTQ3YzJlNjM4NGZkBjsAVA%3D%3D--dd01c8f87c4d5c24b17a19a97d9ccb018ac40333;
+        path=/; HttpOnly; secure
+      x-runtime:
+      - '0.021071'
+      x-rack-cache:
+      - invalidate, pass
+    body: ! '{"result":"success"}
+
+'
+    http_version: '1.1'
