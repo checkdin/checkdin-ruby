@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "checkdin"
-  gem.homepage = "http://github.com/mattmueller/checkdin"
+  gem.homepage = "http://github.com/mattmueller/checkdin-ruby"
   gem.license = "MIT"
   gem.summary = %Q{Ruby gem for interacting with the checkd.in API.}
   gem.description = %Q{Ruby gem for interacting with the checkd.in API.  See http://checkd.in or http://developer.checkd.in for more information.}
