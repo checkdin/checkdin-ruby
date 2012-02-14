@@ -5,6 +5,7 @@ module Checkdin
     extend Forwardable
 
     include Campaigns
+    include Promotions
 
     attr_reader :client_id, :client_secret
 
@@ -54,9 +55,9 @@ module Checkdin
     #
     # Added just for convenience to avoid having to traverse farther down the response just to get to returned data.
 
-    def return_error_or_body(response, response_body)
+    def return_error_or_body(response)
       if response.status == 200 
-        response_body
+        response.body
       else
         raise Checkdin::APIError.new(response.status)
       end

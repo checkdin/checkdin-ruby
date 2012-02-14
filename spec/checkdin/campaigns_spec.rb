@@ -11,12 +11,12 @@ describe Checkdin::Campaigns do
     let(:result) { @client.campaign(2) }
 
     it "should make the campaign's information available" do
-      result.name.should == "Check In To Win!"
+      result.campaign.name.should == "Check In To Win!"
     end
 
     it "should make the campaign's promotions available" do
-      result.promotions.count.should == 1
-      result.promotions.first.promotion.title.should == "Get a FREE coffee for every 5 check ins!"
+      result.campaign.promotions.count.should == 1
+      result.campaign.promotions.first.promotion.title.should == "Get a FREE coffee for every 5 check ins!"
     end
   end
 

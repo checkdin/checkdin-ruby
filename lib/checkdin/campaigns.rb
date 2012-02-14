@@ -7,7 +7,7 @@ module Checkdin
 
     def campaign(id)
       response = connection.get("campaigns/#{id}")
-      return_error_or_body(response, response.body.campaign)
+      return_error_or_body(response)
     end
 
     # Get a list of all campaigns for the authenticating client.
@@ -19,7 +19,7 @@ module Checkdin
       response = connection.get do |req|
       	req.url "campaigns", options
       end
-      return_error_or_body(response, response.body)
+      return_error_or_body(response)
   	end
 
   end
