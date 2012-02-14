@@ -58,7 +58,7 @@ module Checkdin
       if response.status == 200 
         response_body
       else
-        raise Checkdin::APIError.new(response.status, response.body)
+        raise Checkdin::APIError.new(response.status)
       end
     end
       

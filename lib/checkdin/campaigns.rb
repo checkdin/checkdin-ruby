@@ -19,7 +19,7 @@ module Checkdin
       response = connection.get do |req|
       	req.url "campaigns", options
       end
-      return_error_or_body(response, response.body.campaigns)
+      return_error_or_body(response, response.body)
   	end
 
   end

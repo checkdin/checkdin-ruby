@@ -1,16 +1,14 @@
 module Checkdin
   class APIError < StandardError
 
-    attr_reader :response
     attr_reader :status
 
-    def initialize(status, response)
+    def initialize(status)
       @status   = status
-      @response = response
     end
 
     def message
-      "Status Code #{@status}: #{@response}"
+      "Status Code: #{@status}"
     end
   end
 end
