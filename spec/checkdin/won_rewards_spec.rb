@@ -17,6 +17,10 @@ describe Checkdin::WonRewards do
     it "should make the won rewards' promotion available" do
       result.won_reward.promotion.title.should == "A great promotion"
     end
+
+    it "should include the user for the won reward" do
+      result.won_reward.user.username.should == "bdoyk"
+    end
   end
 
   context "viewing a list of won rewards" do
@@ -31,5 +35,11 @@ describe Checkdin::WonRewards do
     it "should only return the right number of results" do
       result.count.should == 2
     end
+
+    it "should return the users" do
+      won_reward_user_usernames = result.won_rewards.collect{|wr| wr.won_reward.user.username }
+      won_reward_user_usernames.should == ["bdoyk", "krhoch"]
+    end
+
   end
 end
