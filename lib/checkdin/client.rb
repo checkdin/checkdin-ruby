@@ -1,8 +1,10 @@
 require 'forwardable'
 
-module Foursquare2
+module Checkdin
   class Client
     extend Forwardable
+
+    include Campaigns
 
     attr_reader :client_id, :client_secret
 
