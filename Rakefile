@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/mattmueller/checkdin"
   gem.license = "MIT"
   gem.summary = %Q{Ruby gem for interacting with the checkd.in API.}
-  gem.description = %Q{Ruby gem for interacting with the checkd.in API.}
+  gem.description = %Q{Ruby gem for interacting with the checkd.in API.  See http://checkd.in or http://developer.checkd.in for more information.}
   gem.email = "muellermr@gmail.com"
   gem.authors = ["Matt Mueller"]
   # dependencies defined in Gemfile
