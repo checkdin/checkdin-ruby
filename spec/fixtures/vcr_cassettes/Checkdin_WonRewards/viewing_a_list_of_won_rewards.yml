@@ -1,0 +1,53 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/won_rewards?client_id=123456&client_secret=7890&limit=2
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - Ruby gem
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.8.54
+      date:
+      - Tue, 14 Feb 2012 17:36:24 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"b76dad81b38fe344ec8830b8f2162988"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-runtime:
+      - '0.211191'
+      x-rack-cache:
+      - miss
+    body: ! '{"total_pages":56,"won_rewards":[{"won_reward":{"points_when_rewarded":null,"points_needed":null,"public_delivery_description":"","private_delivery_description":"Thank
+      you","created_at":"2012-02-08T09:00:34-06:00","href":"https://app.checkd.in/api/v1/won_rewards/142.json","campaign":{"name":"Check
+      In","description":"Check in
+      more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json"},"promotion":{"type":"PromotionLbsCheckin","title":"Get
+      a FREE coffee for every 5 check ins!","description":"Every 5 times you check
+      in you will be rewarded with a free
+      coffee!  Enjoy!","href":"https://app.checkd.in/api/v1/promotions/8.json"},"user":{"id":64,"username":"bdoyk","created_at":"2011-10-19T08:32:38-05:00","first_name":null,"last_name":null,"birth_date":"1982-07-22","gender":null,"avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/64/FYWYJX0YHPSVHPKP.jpg","href":"https://app.checkd.in/api/v1/won_rewards.json?user_id=64","postal_code":{"postal_code":"37206","locality":"NASHVILLE","state":"Tennessee","state_abbr":"TN","county":"DAVIDSON","lat":36.180806,"lon":-86.741761}}}},{"won_reward":{"points_when_rewarded":null,"points_needed":null,"public_delivery_description":"I
+      just got breakfast for 99 cents","private_delivery_description":"Thank you","created_at":"2012-01-27T09:03:21-06:00","href":"https://app.checkd.in/api/v1/won_rewards/141.json","campaign":{"name":"Check
+      In ","description":"Check in to win free coffee and
+      more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json"},"promotion":{"type":"PromotionLbsCheckin","title":"Check
+      in and get breakfast for 99 cents!","description":"Check in at our new location
+      ","href":"https://app.checkd.in/api/v1/promotions/7.json"},"user":{"id":187,"username":"krhoch","created_at":"2012-01-26T08:16:48-06:00","first_name":null,"last_name":null,"birth_date":"1986-05-29","gender":"male","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/won_rewards.json?user_id=187","postal_code":{"postal_code":"37212","locality":"NASHVILLE","state":"Tennessee","state_abbr":"TN","county":"DAVIDSON","lat":36.133251,"lon":-86.800573}}}}]}'
+    http_version: '1.1'
