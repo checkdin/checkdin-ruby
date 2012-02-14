@@ -10,6 +10,7 @@ module Checkdin
     include Activities
     include Users
     include CustomActivities
+    include Leaderboard
 
     attr_reader :client_id, :client_secret
 

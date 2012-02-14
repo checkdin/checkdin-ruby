@@ -1,0 +1,42 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/campaigns/2/leaderboard?client_id=123456&client_secret=7890&limit=5
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - Ruby gem
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.8.54
+      date:
+      - Tue, 14 Feb 2012 20:03:30 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"29ad4660ee71a8dcc548d4727d934287"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-runtime:
+      - '0.045086'
+      x-rack-cache:
+      - miss
+    body: ! '{"total_pages":18,"leaders":[{"leader":{"id":58,"username":"hshapley","created_at":"2011-10-19T00:39:20-05:00","first_name":null,"last_name":null,"birth_date":"1989-03-07","gender":"male","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/58/275338_1146001474_2106650627_q.jpg","points":0,"activities_url":"https://app.checkd.in/api/v1/activities.json?campaign_id=2&user_id=58"}},{"leader":{"id":65,"username":"ladova5","created_at":"2011-10-19T09:00:21-05:00","first_name":null,"last_name":null,"birth_date":"1986-06-09","gender":null,"avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/65/132QMI3KGAHLT0O2.jpg","points":0,"activities_url":"https://app.checkd.in/api/v1/activities.json?campaign_id=2&user_id=65"}},{"leader":{"id":2,"username":"theferf","created_at":"2011-09-18T17:37:49-05:00","first_name":null,"last_name":null,"birth_date":"1978-12-08","gender":"male","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/2/41676_500816616_5622_q.jpg","points":0,"activities_url":"https://app.checkd.in/api/v1/activities.json?campaign_id=2&user_id=2"}},{"leader":{"id":106,"username":"wadetc","created_at":"2011-10-29T07:53:57-05:00","first_name":null,"last_name":null,"birth_date":"1973-02-02","gender":"male","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/106/211346_4701888_4625429_q.jpg","points":0,"activities_url":"https://app.checkd.in/api/v1/activities.json?campaign_id=2&user_id=106"}},{"leader":{"id":113,"username":"Chloecadence","created_at":"2011-11-03T17:53:12-05:00","first_name":null,"last_name":null,"birth_date":"1992-10-30","gender":"female","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/113/371098_591174303_536840876_q.jpg","points":0,"activities_url":"https://app.checkd.in/api/v1/activities.json?campaign_id=2&user_id=113"}}]}'
+    http_version: '1.1'
