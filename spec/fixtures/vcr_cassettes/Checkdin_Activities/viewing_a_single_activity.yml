@@ -1,0 +1,44 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/activities/236?client_id=123456&client_secret=7890
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - Ruby gem
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.8.54
+      date:
+      - Tue, 14 Feb 2012 18:52:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"fc26ef7c31c135517f6f6e560296f890"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-runtime:
+      - '0.032465'
+      x-rack-cache:
+      - miss
+    body: ! '{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"}}}
+
+'
+    http_version: '1.1'

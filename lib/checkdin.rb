@@ -5,6 +5,7 @@ directory = File.expand_path(File.dirname(__FILE__))
 
 module Checkdin
 
+  require 'checkdin/activities'
   require 'checkdin/won_rewards'
   require 'checkdin/promotions'
   require 'checkdin/campaigns'

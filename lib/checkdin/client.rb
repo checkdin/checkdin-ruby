@@ -7,6 +7,7 @@ module Checkdin
     include Campaigns
     include Promotions
     include WonRewards
+    include Activities
 
     attr_reader :client_id, :client_secret
 
