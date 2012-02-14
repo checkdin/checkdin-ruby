@@ -1,0 +1,42 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/users?client_id=123456&client_secret=7890&limit=2
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - Ruby gem
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.8.54
+      date:
+      - Tue, 14 Feb 2012 19:09:21 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"14e240ca9c8aebdd4b026df22d2f3d0c"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-runtime:
+      - '0.032334'
+      x-rack-cache:
+      - miss
+    body: ! '{"total_pages":71,"users":[{"user":{"id":196,"username":"jclandes","created_at":"2012-02-11T18:28:04-06:00","first_name":null,"last_name":null,"birth_date":"1979-02-06","gender":null,"avatar_url":null,"campaign_count":1,"href":"https://app.checkd.in/api/v1/users/196.json"}},{"user":{"id":187,"username":"krhoch","created_at":"2012-01-26T08:16:48-06:00","first_name":null,"last_name":null,"birth_date":"1986-05-29","gender":"male","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","campaign_count":1,"href":"https://app.checkd.in/api/v1/users/187.json"}}]}'
+    http_version: '1.1'

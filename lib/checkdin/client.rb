@@ -8,6 +8,7 @@ module Checkdin
     include Promotions
     include WonRewards
     include Activities
+    include Users
 
     attr_reader :client_id, :client_secret
 
