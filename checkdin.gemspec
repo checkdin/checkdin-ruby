@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
     "spec/checkdin/promotions_spec.rb",
     "spec/checkdin/users_spec.rb",
     "spec/checkdin/won_rewards_spec.rb",
-    "spec/checkdin_spec.rb",
     "spec/fixtures/vcr_cassettes/Checkdin_Activities/viewing_a_list_of_activities.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Activities/viewing_a_single_activity.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Campaigns/viewing_a_list_of_campaigns.yml",
