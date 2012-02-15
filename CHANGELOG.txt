@@ -1,0 +1,6 @@
+current unreleased version
+ * Removed jeweler dependency
+ * Introduced Checkdin::VERSION for runtime version information
+
+0.1.0 - Released February 14, 2012
+ * Initial usable release
