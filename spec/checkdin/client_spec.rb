@@ -10,5 +10,9 @@ describe Checkdin::Client do
     it "should be a Checkdin::Client" do
       Checkdin::Client.new.should be_a(Checkdin::Client)
     end
-  end  	
+
+    it "has the version available" do
+      Checkdin::VERSION.should =~ /^\d\.\d\.\d/
+    end
+  end
 end

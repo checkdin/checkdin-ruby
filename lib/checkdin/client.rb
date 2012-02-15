@@ -74,7 +74,7 @@ module Checkdin
     def default_headers
       headers = {
         :accept =>  'application/json',
-        :user_agent => 'Ruby gem'
+        :user_agent => "checkdin ruby gem #{Checkdin::VERSION}"
       }
     end
 
