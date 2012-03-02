@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "lib/checkdin/leaderboard.rb",
     "lib/checkdin/promotions.rb",
     "lib/checkdin/users.rb",
+    "lib/checkdin/user_bridge.rb",
     "lib/checkdin/version.rb",
     "lib/checkdin/won_rewards.rb",
     "spec/checkdin/activities_spec.rb",
@@ -39,6 +40,7 @@ Gem::Specification.new do |s|
     "spec/checkdin/leaderboard_spec.rb",
     "spec/checkdin/promotions_spec.rb",
     "spec/checkdin/users_spec.rb",
+    "spec/checkdin/user_bridge_spec.rb",
     "spec/checkdin/won_rewards_spec.rb",
     "spec/fixtures/vcr_cassettes/Checkdin_Activities/viewing_a_list_of_activities.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Activities/viewing_a_single_activity.yml",
@@ -63,6 +65,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday', '>= 0.6', '< 0.8'
   s.add_runtime_dependency 'faraday_middleware', '>= 0.8'
   s.add_runtime_dependency 'hashie', '~> 1.0'
+  s.add_runtime_dependency 'activesupport', '>= 2.0.3'
 
   s.add_development_dependency "rspec", "~> 2.8.0"
   s.add_development_dependency "rdoc", "~> 3.12"
@@ -70,4 +73,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "simplecov", '~> 0.5.4'
   s.add_development_dependency "webmock", "~> 1.7.10"
   s.add_development_dependency "vcr", "~> 1.11.3"
+  s.add_development_dependency "timecop"
 end
