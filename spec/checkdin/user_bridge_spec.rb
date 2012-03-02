@@ -21,4 +21,23 @@ describe Checkdin::UserBridge, '#build_authenticated_parameters' do
       }
     end
   end
+
+  context "with an authenticated action" do
+    subject { instance.build_authenticated_parameters(user_email, user_identifier, authentication_action) }
+    let(:authentication_action) { 'authenticate_facebook' }
+
+    it "should output a hash with a different digest and the authenticated_action included" do
+      Timecop.freeze(Time.at(timestamp)) do
+        subject.should == {
+          'auth_timestamp'        => timestamp,
+          'authentication_action' => authentication_action,
+          'client_id'             => client_identifier,
+          'client_uid'            => user_identifier,
+          'email'                 => user_email,
+          'digest'                => 'f27f0b46e8fb383f53e48d02da51be05f573d4aa80d727acfe08d2cc76db2861'
+        }
+      end
+    end
+  end
+
 end

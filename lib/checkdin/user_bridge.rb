@@ -26,25 +26,29 @@ module Checkdin
 
     # Public: Build a signed hash of parameters for redirecting the user to checkd.in.
     #
-    # email           - email address of the user, MAY have different values for a given
-    #                   user over time.
-    # user_identifier - your unique identifier for the user, MUST NOT change over time.
+    # email                 - email address of the user, MAY have different values for a given
+    #                         user over time.
+    # user_identifier       - your unique identifier for the user, MUST NOT change over time.
+    # authentication_action - OPTIONAL, the given action will be performed immediately,
+    #                         and the user redirected back to your site afterwards.
     #
     # Returns a hash including a secure message digest and a current timestamp
-    def build_authenticated_parameters email, user_identifier
-      build_request(email, user_identifier).tap do |request|
+    def build_authenticated_parameters email, user_identifier, authentication_action = nil
+      build_request(email, user_identifier, authentication_action).tap do |request|
         request['digest'] = digest_request(request)
       end
     end
 
     private
-    def build_request email, user_identifier
+    def build_request email, user_identifier, authentication_action
       {
         'auth_timestamp' => Time.now.to_i,
         'client_id'      => client_id,
         'client_uid'     => user_identifier,
         'email'          => email,
-      }
+      }.tap do |request|
+        request['authentication_action'] = authentication_action if authentication_action
+      end
     end
 
     def digest_request request
