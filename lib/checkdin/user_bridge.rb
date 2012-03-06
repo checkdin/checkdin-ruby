@@ -1,5 +1,3 @@
-require 'active_support/core_ext/object/to_query'
-
 module Checkdin
   class UserBridge
     CHECKDIN_DEFAULT_LANDING = 'https://app.checkd.in/user_landing?'
