@@ -21,7 +21,8 @@ module Checkdin
     #
     #   bridge = Checkdin::UserBridge.new(:client_identifier => 'YOUR_ASSIGNED_CLIENT_IDENTIFIER',
     #                                     :bridge_secret     => 'YOUR_ASSIGNED_BRIDGE_SECRET')
-    #   redirect_to bridge.login_url('bob@example.com', '112-fixed-user-identifier')
+    #   redirect_to bridge.login_url(:email           => 'bob@example.com',
+    #                                :user_identifier => '112-fixed-user-identifier')
     #
     def initialize options
       @client_identifier = options.delete(:client_identifier) or raise ArgumentError.new("No :client_identifier given")
@@ -35,15 +36,20 @@ module Checkdin
     # Public: Build a full signed url for logging a specific user into checkd.in. Notice:
     # you MUST NOT reuse the result of this method, as it expires automatically based on time.
     #
-    # email                 - email address of the user, MAY have different values for a given
-    #                         user over time.
-    # user_identifier       - your unique identifier for the user, MUST NOT change over time.
-    # authentication_action - OPTIONAL, the given action will be performed immediately,
-    #                         and the user redirected back to your site afterwards.
+    # options                 - a hash with the following values defined:
+    #   email                 - REQUIRED, email address of the user, MAY have different values for a given
+    #                           user over time.
+    #   user_identifier       - REQUIRED, your unique identifier for the user, MUST NOT change over time.
+    #   authentication_action - OPTIONAL, the given action will be performed immediately,
+    #                           and the user redirected back to your site afterwards.
     #
     # Returns a URL you can use for redirecting a user. Notice this will expire, so it should
     # be generated and used only when a user actually wants to log into checkd.in.
-    def login_url email, user_identifier, authentication_action = nil
+    def login_url options
+      email                 = options.delete(:email)           or raise ArgumentError.new("No :email passed for user")
+      user_identifier       = options.delete(:user_identifier) or raise ArgumentError.new("No :user_identifier passed for user")
+      authentication_action = options.delete(:authentication_action)
+
       authenticated_parameters = build_authenticated_parameters(email, user_identifier, authentication_action)
 
       [checkdin_landing_url, authenticated_parameters.to_query].join

@@ -35,7 +35,9 @@ describe Checkdin::UserBridge, '#login_url' do
   let(:instance) { Checkdin::UserBridge.new(:client_identifier    => client_identifier,
                                             :bridge_secret        => bridge_secret,
                                             :checkdin_landing_url => checkdin_landing_url) }
-  subject { instance.login_url(user_email, user_identifier, authentication_action) }
+  subject { instance.login_url(:email                 => user_email,
+                               :user_identifier       => user_identifier,
+                               :authentication_action => authentication_action) }
   let(:client_identifier) { 'client-1704' }
   let(:bridge_secret) { '123-shared-secret' }
   let(:user_email) { 'bob@example.com' }
