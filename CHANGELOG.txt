@@ -1,4 +1,4 @@
-current unreleased version
+0.2.0 - Released March 6, 2012
  * Removed jeweler dependency
  * Introduced Checkdin::VERSION for runtime version information
  * Checkdin::UserBridge added for creating and logging users in
