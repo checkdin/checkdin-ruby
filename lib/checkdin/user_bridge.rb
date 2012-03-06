@@ -2,36 +2,34 @@ module Checkdin
   class UserBridge
     CHECKDIN_DEFAULT_LANDING = 'https://app.checkd.in/user_landing?'
 
-    attr :client_id, :bridge_secret
-
-    # Public: Used for setting the URL which login requests go to, defaults to CHECKDIN_DEFAULT_LANDING.
-    # Please set this value as directed by Checkd In.
-    #
-    # Example:
-    #
-    #   bridge = Checkdin::UserBridge.new(...)
-    #   bridge.checkdin_landing_url = 'https://client-name.checkd.in/user_landing?'
-    #
-    attr_accessor :checkdin_landing_url
+    attr :client_identifier, :bridge_secret
+    attr :checkdin_landing_url
 
     # Used to build the authenticated parameters for logging in an end-user on 
     # checkd.in via a redirect.
     #
-    # client_id     - the same client identifier used when accessing the regular API methods.
-    # bridge_secret - previously agreed upon shared secret for the user bridge. This is NOT
-    #                 the shared secret used for accessing the backend API, please do not
-    #                 confuse the two.
+    # options              - a hash with a the following values defined:
+    #   :client_identifier - REQUIRED, the same client identifier used when accessing the regular
+    #                        API methods.
+    #   :bridge_secret     - REQUIRED, previously agreed upon shared secret for the user bridge.
+    #                        This is NOT the shared secret used for accessing the backend API,
+    #                        please do not confuse the two.
+    #   :checkdin_landing_url - OPTIONAL, the value will default to CHECKDIN_DEFAULT_LANDING
+    #                           if not given. Please set this value as directed by Checkd In.
     #
     # Examples
     #
-    #   bridge = Checkdin::UserBridge.new('YOUR_ASSIGNED_CLIENT_IDENTIFIER', 'YOUR_ASSIGNED_BRIDGE_SECRET')
+    #   bridge = Checkdin::UserBridge.new(:client_identifier => 'YOUR_ASSIGNED_CLIENT_IDENTIFIER',
+    #                                     :bridge_secret     => 'YOUR_ASSIGNED_BRIDGE_SECRET')
     #   redirect_to bridge.login_url('bob@example.com', '112-fixed-user-identifier')
     #
-    def initialize client_id, bridge_secret
-      @client_id     = client_id
-      @bridge_secret = bridge_secret
+    def initialize options
+      @client_identifier = options.delete(:client_identifier) or raise ArgumentError.new("No :client_identifier given")
+      @bridge_secret     = options.delete(:bridge_secret)     or raise ArgumentError.new("No :bridge_secret given")
 
-      @checkdin_landing_url = CHECKDIN_DEFAULT_LANDING
+      @checkdin_landing_url = options.delete(:checkdin_landing_url) || CHECKDIN_DEFAULT_LANDING
+
+      raise ArgumentError.new("Unknown arguments given: #{options.keys.inspect}") unless options.empty?
     end
 
     # Public: Build a full signed url for logging a specific user into checkd.in. Notice:
@@ -64,7 +62,7 @@ module Checkdin
     def build_request email, user_identifier, authentication_action
       {
         'auth_timestamp' => Time.now.to_i,
-        'client_id'      => client_id,
+        'client_id'      => client_identifier,
         'client_uid'     => user_identifier,
         'email'          => email,
       }.tap do |request|
