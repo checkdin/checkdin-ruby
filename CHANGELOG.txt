@@ -1,3 +1,6 @@
+0.2.1 - Released March 11, 2012
+ * Added the ability to create users.
+
 0.2.0 - Released March 6, 2012
  * Removed jeweler dependency
  * Introduced Checkdin::VERSION for runtime version information
