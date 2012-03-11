@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "checkdin"
   s.version = Checkdin::VERSION
   s.authors = ["Matt Mueller"]
-  s.date = "2012-02-14"
+  s.date = "2012-03-11"
   s.description = "Ruby gem for interacting with the checkd.in API.  See http://checkd.in or http://developer.checkd.in for more information."
   s.email = "muellermr@gmail.com"
   s.extra_rdoc_files = [
