@@ -33,4 +33,26 @@ describe Checkdin::Users do
     end
 
   end
+
+  context "creating a user" do
+
+    context "with valid parameters" do
+      use_vcr_cassette
+      let(:result) { @client.create_user(:email => 'atest@checkd.in', :identifier => 'clientuid123')}
+
+      it "should return the new user's basic information" do
+        result.user.should_not be_nil
+      end
+    end
+
+    context "with an invalid email" do
+      use_vcr_cassette
+
+      it "should return error 400" do
+        expect do
+          @client.create_user(:email => 'notanemail', :identifier => 'client123')
+        end.to raise_error(Checkdin::APIError, /400/)
+      end
+    end
+  end
 end

@@ -31,5 +31,18 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    # Create a user in the checkd.in system tied to the authenticating client.
+    #
+    # @param [Hash]  options
+    # @option options String :identifier - The authenticating client's internal identifier for this user.
+    # @option options String :email - A valid email for the user
+
+    def create_user(options={})
+      response = connection.post do |req|
+        req.url "users", options
+      end
+      return_error_or_body(response)
+    end
+
   end
 end
