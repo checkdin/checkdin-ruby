@@ -1,6 +1,6 @@
 = checkdin
 
-Description goes here.
+Ruby gem for interacting with the checkd.in API.
 
 == Contributing to checkdin
  
