@@ -1,3 +1,7 @@
+0.2.2 - Release April 9, 2012
+ * Added the ability to vote for activities in a voting-enabled promotion
+ * Added the votes leaderboard endpoint for voting-enabled promotions
+
 0.2.1 - Released March 11, 2012
  * Added the ability to create users.
 

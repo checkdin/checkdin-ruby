@@ -32,4 +32,32 @@ describe Checkdin::Promotions do
       result.count.should == 2
     end
   end
+
+  context "viewing the votes leaderboard for a promotion" do
+    use_vcr_cassette
+    let(:result) { @client.promotion_votes_leaderboard(54, :limit => limit) }
+    let(:limit) { nil }
+
+    it "should return promotion information" do
+      result.promotion.title.should == "A voting promotion!"
+    end
+
+    it "should return a list of activities ordered by vote count" do
+      result.promotion.votes_leaderboard.activities.first.activity.vote_count.should == 7
+      result.promotion.votes_leaderboard.activities.last.activity.vote_count.should == 0
+    end
+
+    it "should return all activities" do
+      result.promotion.votes_leaderboard.activities.count.should == 3
+    end
+
+    context "limiting the number of records returned" do
+      use_vcr_cassette
+      let(:limit) { 1 }
+
+      it "should only return limit number of records" do
+        result.promotion.votes_leaderboard.activities.count.should == 1
+      end
+    end
+  end
 end
