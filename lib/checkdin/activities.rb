@@ -25,5 +25,18 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    # Add a vote for a single activity when voting is enabled for its promotion
+    #
+    # param [Integer] id The ID of the activity
+    # @param [Hash] options
+    # @option options Integer :user_id - The user that is performing this vote.
+
+    def add_vote_on_activity(id, options={})
+      response = connection.post do |req|
+        req.url "activities/#{id}/vote", options
+      end
+      return_error_or_body(response)
+    end
+
   end
 end
