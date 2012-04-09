@@ -43,4 +43,30 @@ describe Checkdin::Activities do
     end
 
   end
+
+  context "voting for an activity" do
+    use_vcr_cassette
+    let(:result) { @client.add_vote_on_activity(18881) }
+
+    it "should make the activity's information available" do
+      result.activity.type.should == "twitter_status"
+    end
+
+    it "should register the vote" do
+      result.activity.vote_count.should == 6
+    end
+
+    context "passing an email" do
+      use_vcr_cassette
+      let(:result) { @client.add_vote_on_activity(18881, :user_id => 36)}
+
+      it "should register the vote as normal" do
+        result.activity.type.should == "twitter_status"
+      end
+
+      it "should up the vote count as normal" do
+        result.activity.vote_count.should == 7
+      end
+    end
+  end
 end
