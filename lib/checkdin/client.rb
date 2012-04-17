@@ -11,6 +11,7 @@ module Checkdin
     include Users
     include CustomActivities
     include Leaderboard
+    include Votes
 
     attr_reader :client_id, :client_secret
 
