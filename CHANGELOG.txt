@@ -1,3 +1,6 @@
+0.2.3 - Release April 17, 2012
+ * Added support for the votes endpoint
+
 0.2.2 - Release April 9, 2012
  * Added the ability to vote for activities in a voting-enabled promotion
  * Added the votes leaderboard endpoint for voting-enabled promotions
