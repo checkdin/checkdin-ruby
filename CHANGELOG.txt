@@ -1,6 +1,9 @@
 unreleased
  * Added support for custom api_url endpoint
 
+0.2.4 - Released April 17, 2012
+ * Fixing up incompleted file requirements in gemspec.
+
 0.2.3 - Release April 17, 2012
  * Added support for the votes endpoint
 
