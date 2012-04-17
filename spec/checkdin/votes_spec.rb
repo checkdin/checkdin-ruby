@@ -6,7 +6,7 @@ describe Checkdin::Votes do
     @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
   end
 
-  context "viewing a list of activities" do
+  context "viewing a list of votes" do
     use_vcr_cassette
     let(:result) { @client.votes }
 
