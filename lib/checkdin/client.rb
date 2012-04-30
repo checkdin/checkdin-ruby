@@ -14,6 +14,10 @@ module Checkdin
     include Votes
 
     attr_reader :client_id, :client_secret
+    attr_reader :ssl
+    # Base URL for api requests.
+    attr_reader :api_url
+
 
     #Initialize the client class that will be used for all checkd.in API requests.  Requires a valid client_id and client_secret - more info at http://developer.checkd.in
     #
@@ -21,25 +25,25 @@ module Checkdin
     # @param [Hash] options
     # @option options String :client_id Your foursquare app's client_id
     # @option options String :client_secret Your foursquare app's client_secret
+    # @option options String :api_url A custom API url, does not usually have to be overridden
     # @option options Hash   :ssl Additional SSL options (like the path to certificate file)
-    
-    def initialize(options={})
-      @client_id = options[:client_id]
-      @client_secret = options[:client_secret]
-      @ssl = options[:ssl].nil? ? Hash.new : options[:ssl]
-    end
-    
-    def ssl
-      @ssl
-    end
-    
-    # Sets up the connection to be used for all requests based on options passed during initialization.
 
+    def initialize(options={})
+      @client_id     = options.delete(:client_id)
+      @client_secret = options.delete(:client_secret)
+      @api_url       = options.delete(:api_url) || "https://app.checkd.in/api/v1"
+      @ssl           = options.delete(:ssl) || Hash.new
+
+      raise ArgumentError.new("Unexpected argument given: #{options.inspect}") unless options.blank?
+    end
+
+    # Sets up the connection to be used for all requests based on options passed during initialization.
     def connection
       params = {}
-      params[:client_id] = @client_id
-      params[:client_secret] = @client_secret
-      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :params => params, :headers => default_headers) do |builder|
+      params[:client_id]     = client_id
+      params[:client_secret] = client_secret
+
+      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => ssl, :params => params, :headers => default_headers) do |builder|
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
 
@@ -51,24 +55,18 @@ module Checkdin
       end
     end
 
-    # Base URL for api requests.
-
-    def api_url
-      "https://app.checkd.in/api/v1"
-    end
-
     # Helper method to return errors or desired response data as appropriate.
     #
     # Added just for convenience to avoid having to traverse farther down the response just to get to returned data.
 
     def return_error_or_body(response)
-      if response.status == 200 
+      if response.status == 200
         response.body
       else
         raise Checkdin::APIError.new(response.status)
       end
     end
-      
+
     private
 
 

@@ -1,3 +1,6 @@
+unreleased
+ * Added support for custom api_url endpoint
+
 0.2.3 - Release April 17, 2012
  * Added support for the votes endpoint
 

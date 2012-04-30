@@ -14,5 +14,16 @@ describe Checkdin::Client do
     it "has the version available" do
       Checkdin::VERSION.should =~ /^\d\.\d\.\d/
     end
+
+    it "takes an optional api_url" do
+      instance = Checkdin::Client.new(:api_url => 'https://bogus.checkd.in/api/v7')
+      instance.api_url.should == 'https://bogus.checkd.in/api/v7'
+    end
+
+    it "raises an error when an unknown option is passed" do
+      expect {
+        Checkdin::Client.new(:unexpected_present => 'details here')
+      }.to raise_error(ArgumentError, /unexpected_present/)
+    end
   end
 end

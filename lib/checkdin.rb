@@ -3,6 +3,7 @@ require 'faraday_middleware'
 
 require 'openssl'
 require 'active_support/core_ext/object/to_query'
+require 'active_support/core_ext/object/blank'
 
 require 'checkdin/version'
 require 'checkdin/leaderboard'
