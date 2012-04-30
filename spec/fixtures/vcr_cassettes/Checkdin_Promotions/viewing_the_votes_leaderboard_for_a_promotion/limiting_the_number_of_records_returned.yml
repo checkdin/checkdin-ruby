@@ -1,44 +1,44 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
-    uri: https://app.checkd.in:443/api/v1/promotions/54/votes_leaderboard?client_id=123456&client_secret=7890&limit=1
-    body: 
-    headers: 
-      accept: 
+    uri: https://app.checkd.in:443/api/v1/promotions/54/votes_leaderboard?client_id={client_id}&client_secret={client_secret}&limit=1
+    body:
+    headers:
+      accept:
       - application/json
-      user-agent: 
+      user-agent:
       - checkdin ruby gem 0.2.1
-      accept-encoding: 
+      accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      server:
       - nginx/1.0.11
-      date: 
+      date:
       - Mon, 09 Apr 2012 11:02:11 GMT
-      content-type: 
+      content-type:
       - application/json; charset=utf-8
-      transfer-encoding: 
+      transfer-encoding:
       - chunked
-      connection: 
+      connection:
       - keep-alive
-      status: 
+      status:
       - 200 OK
-      strict-transport-security: 
+      strict-transport-security:
       - max-age=31536000
-      x-ua-compatible: 
+      x-ua-compatible:
       - IE=Edge,chrome=1
-      etag: 
+      etag:
       - "\"616689e5a2d0af0ef532965e0f6aad51\""
-      cache-control: 
+      cache-control:
       - must-revalidate, private, max-age=0
-      x-runtime: 
+      x-runtime:
       - "0.128383"
-      x-rack-cache: 
+      x-rack-cache:
       - miss
     body: "{\"promotion\":{\"title\":\"A voting promotion!\",\"description\":\"You iz winning\",\"terms\":\"\",\"above_21_only\":false,\"ends_at\":\"2012-05-08T05:42:00-05:00\",\"href\":\"https://app.checkd.in/api/v1/promotions/54.json\",\"type\":\"promotion_photo\",\"twitter_hashtag\":\"#mynordstrom\",\"participant_status_message\":null,\"reward\":{\"private_delivery_description\":\"\",\"public_delivery_description\":\"\",\"single_delivery\":false,\"type\":\"point_reward\",\"reward_points\":100},\"trigger_schedule\":{\"rewarding\":\"many\",\"winner_picked\":\"activity_interval\",\"interval\":1,\"human_readable\":\"Rewarded every time the same user performs a relevant action.\"},\"votes_leaderboard\":{\"total_pages\":3,\"activities\":[{\"activity\":{\"type\":\"twitter_status\",\"id\":18881,\"created_at\":\"2012-02-21T16:08:55-06:00\",\"acted_on\":{\"type\":\"twitter_status\",\"tweet_fk\":172080368760000512,\"status\":\"Check out what I purchased at #mynordstrom http://t.co/DKUXa41E\",\"photo_url\":\"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg\",\"photo_thumbnail_url\":\"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg:thumb\"},\"user\":{\"id\":36,\"username\":\"demomattloadtest\",\"avatar_url\":null,\"href\":\"https://app.checkd.in/api/v1/activities.json?user_id=36\"},\"href\":\"https://app.checkd.in/api/v1/activities/18881.json\",\"vote_count\":7}}]},\"campaign\":{\"name\":\"Nordstrom Rewards\",\"description\":\"Earn discounts and other great rewards for joining Nordstrom Fashion Rewards!\",\"start_date\":\"2011-12-14\",\"end_date\":\"2012-06-01\",\"href\":\"https://app.checkd.in/api/v1/campaigns/11.json\"}}}"
     http_version: "1.1"

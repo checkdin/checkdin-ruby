@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Checkdin::Votes do
 
   before do
-    @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
+    @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
   context "viewing a list of votes" do
@@ -11,7 +11,7 @@ describe Checkdin::Votes do
     let(:result) { @client.votes }
 
     it "should show a list of results" do
-      result.votes.count.should == 7
+      result.votes.count.should == 13
     end
 
     it "should include the activity the vote was for" do
