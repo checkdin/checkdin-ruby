@@ -69,8 +69,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.10"
   s.summary = "Ruby gem for interacting with the checkd.in API."
 
-  s.add_runtime_dependency 'faraday', '>= 0.6', '< 0.8'
-  s.add_runtime_dependency 'faraday_middleware', '>= 0.8'
+  s.add_runtime_dependency 'faraday', '~> 0.8'
+  s.add_runtime_dependency 'faraday_middleware'
   s.add_runtime_dependency 'hashie', '~> 1.0'
   s.add_runtime_dependency 'activesupport', '>= 2.0.3'
 

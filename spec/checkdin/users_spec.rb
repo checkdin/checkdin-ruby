@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Checkdin::Users do
 
   before do
-    @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
+    @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
   context "viewing a single user" do
