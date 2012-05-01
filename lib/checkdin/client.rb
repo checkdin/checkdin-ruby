@@ -40,19 +40,21 @@ module Checkdin
 
     # Sets up the connection to be used for all requests based on options passed during initialization.
     def connection
-      params = {}
-      params[:client_id]     = client_id
-      params[:client_secret] = client_secret
+      @connection ||= begin
+        params = {
+          :client_id     => client_id,
+          :client_secret => client_secret
+        }
 
-      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => ssl, :params => params, :headers => default_headers) do |builder|
-        builder.use Faraday::Request::Multipart
-        builder.use Faraday::Request::UrlEncoded
+        Faraday::Connection.new(:url => api_url, :ssl => ssl, :params => params, :headers => default_headers) do |builder|
+          builder.use Faraday::Request::Multipart
+          builder.use Faraday::Request::UrlEncoded
 
-        builder.use FaradayMiddleware::Mashify
-        builder.use FaradayMiddleware::ParseJson
+          builder.use FaradayMiddleware::Mashify
+          builder.use FaradayMiddleware::ParseJson
 
-        builder.adapter Faraday.default_adapter
-
+          builder.adapter Faraday.default_adapter
+        end
       end
     end
 
