@@ -18,6 +18,7 @@ module Checkdin
     # Base URL for api requests.
     attr_reader :api_url
 
+    DEFAULT_API_URL = "https://app.checkd.in/api/v1"
 
     #Initialize the client class that will be used for all checkd.in API requests.  Requires a valid client_id and client_secret - more info at http://developer.checkd.in
     #
@@ -31,8 +32,8 @@ module Checkdin
     def initialize(options={})
       @client_id     = options.delete(:client_id)
       @client_secret = options.delete(:client_secret)
-      @api_url       = options.delete(:api_url) || "https://app.checkd.in/api/v1"
-      @ssl           = options.delete(:ssl) || Hash.new
+      @api_url       = options.delete(:api_url) || DEFAULT_API_URL
+      @ssl           = options.delete(:ssl) || {}
 
       raise ArgumentError.new("Unexpected argument given: #{options.inspect}") unless options.blank?
     end
