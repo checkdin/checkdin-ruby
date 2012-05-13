@@ -15,6 +15,7 @@ module Checkdin
     # @param [Hash]  options
     # @option options Integer :campaign_id - Only return won rewards for this campaign.
     # @option options Integer :user_id - Only return won rewards for this user.
+    # @option options Integer :promotion_id - Only return won rewards for this promotion.
     # @option options Integer :limit - The maximum number of records to return.
 
     def won_rewards(options={})
