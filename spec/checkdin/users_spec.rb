@@ -55,4 +55,55 @@ describe Checkdin::Users do
       end
     end
   end
+
+  context "viewing a single user's list of authentications" do
+    use_vcr_cassette
+    let(:result) { @client.user_authentications(7835) }
+
+    it "should make a list of authentications available" do
+      result.authentications.collect{ |a| a.authentication.provider }.should == ["twitter","facebook","foursquare"]
+    end
+
+    it "should include the user's uid" do
+      result.authentications.collect{ |a| a.authentication.uid }.should == ["5930881311","1000038776937901","19125491"]
+    end
+  end
+
+  context "viewing a single user's specific authentication" do
+    use_vcr_cassette
+    let(:result) { @client.user_authentication(7835, 19479) }
+
+    it "should make a single authentication available" do
+      result.authentication.provider.should == "twitter"
+      result.authentication.uid.should == "5930881311"
+      result.authentication.nickname.should == "demo"
+    end
+  end
+
+  context "creating an authentication" do
+    context "with valid parameters" do
+      use_vcr_cassette
+      let(:result) { @client.create_user_authentication(7887, 
+                                                        :provider    => "foursquare",
+                                                        :uid         => "1234",
+                                                        :oauth_token => "111",
+                                                        :nickname    => "foursquare_name") }
+
+      it "should return the new authentication's information" do
+        result.authentication.provider.should == "foursquare"
+        result.authentication.uid.should == "1234"
+        result.authentication.nickname.should == "foursquare_name"
+      end
+    end
+
+    context "with invalid parameters" do
+      use_vcr_cassette
+
+      it "should return an error 400" do
+        expect do
+          @client.create_user_authentication(7887)
+        end.to raise_error(Checkdin::APIError, /400/)
+      end
+    end
+  end
 end

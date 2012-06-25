@@ -1,0 +1,46 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/users/7835/authentications/19479?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.5
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/1.0.11
+      date: 
+      - Mon, 25 Jun 2012 15:35:32 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      status: 
+      - 200 OK
+      strict-transport-security: 
+      - max-age=31536000
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"7dc6683e23019b9f9c4576c7e4937529\""
+      cache-control: 
+      - must-revalidate, private, max-age=0
+      x-request-id: 
+      - 7aed097cf7ee41e3325545ad11d1e548
+      x-runtime: 
+      - "1.756168"
+      x-rack-cache: 
+      - miss
+    body: "{\"authentication\":{\"provider\":\"twitter\",\"token_state\":\"fresh\",\"uid\":\"5930881311\",\"nickname\":\"demo\"}}"
+    http_version: "1.1"

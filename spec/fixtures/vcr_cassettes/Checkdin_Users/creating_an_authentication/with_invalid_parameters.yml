@@ -1,0 +1,44 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://app.checkd.in:443/api/v1/users/7887/authentications?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.5
+      content-length: 
+      - "0"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 400
+      message: Bad Request
+    headers: 
+      server: 
+      - nginx/1.0.11
+      date: 
+      - Mon, 25 Jun 2012 15:51:52 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      status: 
+      - 400 Bad Request
+      strict-transport-security: 
+      - max-age=31536000
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      cache-control: 
+      - no-cache
+      x-request-id: 
+      - 3316decdb6bdfef5b0c707c65def9cfa
+      x-runtime: 
+      - "0.233173"
+      x-rack-cache: 
+      - invalidate, pass
+    body: "{\"error\":\"Validation failed: Provider can't be blank, Provider is not included in the list, Uid can't be blank, Oauth token can't be blank\"}"
+    http_version: "1.1"
