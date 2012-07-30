@@ -15,6 +15,7 @@ require 'checkdin/won_rewards'
 require 'checkdin/promotions'
 require 'checkdin/campaigns'
 require 'checkdin/votes'
+require 'checkdin/clients'
 require 'checkdin/client'
 require 'checkdin/api_error'
 
