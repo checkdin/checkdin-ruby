@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr_cassettes/Checkdin_Votes/viewing_a_list_of_activities.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_WonRewards/viewing_a_list_of_won_rewards.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_WonRewards/viewing_a_single_won_reward.yml",
-    "spec/fixtures/vcr_cassettes/Checkdin_Clients/viewing_a_client_s_own_information.yml"
+    "spec/fixtures/vcr_cassettes/Checkdin_Clients/viewing_a_client_s_own_information.yml",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/mattmueller/checkdin"
