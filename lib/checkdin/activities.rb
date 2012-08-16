@@ -14,6 +14,7 @@ module Checkdin
     #
     # @param [Hash]  options
     # @option options Integer :campaign_id - Only return won rewards for this campaign.
+    # @option options String  :classification - Only return activities for users in this classification.
     # @option options Integer :user_id - Only return won rewards for this user.
     # @option options Integer :since - Only fetch updates since this time (UNIX timestamp)
     # @option options Integer :limit - The maximum number of records to return.

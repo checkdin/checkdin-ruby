@@ -34,8 +34,19 @@ module Checkdin
     # Create a user in the checkd.in system tied to the authenticating client.
     #
     # @param [Hash]  options
-    # @option options String :identifier - The authenticating client's internal identifier for this user.
-    # @option options String :email - A valid email for the user
+    # @option options String :identifier            - REQUIRED, The authenticating client's internal identifier for this user.
+    # @option options String :email                 - REQUIRED, A valid email for the user
+    # @option options String :referral_token        - OPTIONAL, the referral token of the user that referred the user being created.
+    # @option options String :first_name            - OPTIONAL
+    # @option options String :last_name             - OPTIONAL
+    # @option options String :gender                - OPTIONAL, format of male or female
+    # @option options String :birth_date            - OPTIONAL, YYYY-MM-DD format
+    # @option options String :username              - OPTIONAL
+    # @option options String :mobile_number         - OPTIONAL, XXXYYYZZZZ format
+    # @option options String :postal_code_text      - OPTIONAL, XXXXX format
+    # @option options String :classification        - OPTIONAL, the internal group or classification a user belongs to
+    # @option options String :delivery_email        - OPTIONAL, whether a user should receive email notifications
+    # @option options String :delivery_sms          - OPTIONAL, whether a user should receive sms notifications
 
     def create_user(options={})
       response = connection.post do |req|

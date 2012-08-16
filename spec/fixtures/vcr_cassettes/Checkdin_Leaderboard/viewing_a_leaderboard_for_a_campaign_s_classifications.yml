@@ -1,0 +1,46 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://staging:cKGdyvb4gQD9YJg3cACV@staging.checkd.in:443/api/v1/campaigns/35/classification_leaderboard?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.7
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/1.0.11
+      date: 
+      - Thu, 16 Aug 2012 14:06:50 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      status: 
+      - 200 OK
+      strict-transport-security: 
+      - max-age=31536000
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"0016a5775b88d5dbd81551ebc2148c1b\""
+      cache-control: 
+      - must-revalidate, private, max-age=0
+      x-request-id: 
+      - 707edb8903bd34be9db20d17dc393e6d
+      x-runtime: 
+      - "0.159060"
+      x-rack-cache: 
+      - miss
+    body: "{\"classifications\":[{\"classification\":\"grouped\",\"total_points\":10,\"members\":1}]}"
+    http_version: "1.1"

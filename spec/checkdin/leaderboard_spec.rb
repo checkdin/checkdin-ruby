@@ -15,4 +15,14 @@ describe Checkdin::Leaderboard do
       result.leaders.count.should == 5
     end
   end
+
+  context "viewing a leaderboard for a campaign's classifications" do
+    use_vcr_cassette
+    let(:result) { @client.classification_leaderboard(35) }
+
+    it "should provide a list of classifications" do
+      result.classifications.first.classification.should == "grouped"
+      result.classifications.first.total_points.should == 10
+    end
+  end
 end

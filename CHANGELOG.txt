@@ -1,3 +1,8 @@
+0.2.8
+ * Added support for classification leaderboard
+ * Updated user bridge to support passing all possible options for a user
+ * Updated documentation based on new user options.
+
 0.2.5
  * Added support for custom api_url endpoint
  * APIError now includes body response.
