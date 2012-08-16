@@ -53,6 +53,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/vcr_cassettes/Checkdin_Campaigns/viewing_a_single_campaign.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_CustomActivities.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Leaderboard/viewing_a_leaderboard_for_a_campaign.yml",
+    "spec/fixtures/vcr_cassettes/Checkdin_Leaderboard/viewing_a_leaderboard_for_a_campaign_s_classifications.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Promotions/viewing_a_list_of_promotions.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Promotions/viewing_a_single_promotion.yml",
     "spec/fixtures/vcr_cassettes/Checkdin_Promotions/viewing_the_votes_leaderboard_for_a_promotion.yml",
