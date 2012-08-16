@@ -1,0 +1,46 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://staging.checkd.in:443/api/v1/clients/me?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.6
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/1.0.11
+      date: 
+      - Mon, 30 Jul 2012 13:53:06 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      status: 
+      - 200 OK
+      strict-transport-security: 
+      - max-age=31536000
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"41ec4e0bf40b05f1cb6942e8ad224fc5\""
+      cache-control: 
+      - must-revalidate, private, max-age=0
+      x-request-id: 
+      - 6d1c115ae2577724a25b9596b1ac492e
+      x-runtime: 
+      - "0.054093"
+      x-rack-cache: 
+      - miss
+    body: "{\"client\":{\"name\":\"A Test\",\"website\":\"http://example.com\",\"signup_redirect\":\"http://example.com/users/return_from_checkdin\",\"custom_domain\":\"custom.staging.checkd.in\",\"shared_authentication_secret\":\"12345\",\"push_api_secret\":null}}"
+    http_version: "1.1"
