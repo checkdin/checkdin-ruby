@@ -30,7 +30,6 @@ module Checkdin
 
       @checkdin_landing_url = options.delete(:checkdin_landing_url) || CHECKDIN_DEFAULT_LANDING
 
-      raise ArgumentError.new("Unknown arguments given: #{options.keys.inspect}") unless options.empty?
     end
 
     # Public: Build a full signed url for logging a specific user into checkd.in. Notice:
@@ -42,15 +41,25 @@ module Checkdin
     #   user_identifier       - REQUIRED, your unique identifier for the user, MUST NOT change over time.
     #   authentication_action - OPTIONAL, the given action will be performed immediately,
     #                           and the user redirected back to your site afterwards.
+    #   referral_token        - OPTIONAL, the referral token of the user that referred the user being created.
+    #   first_name            - OPTIONAL
+    #   last_name             - OPTIONAL
+    #   gender                - OPTIONAL, format of male or female
+    #   birth_date            - OPTIONAL, YYYY-MM-DD format
+    #   username              - OPTIONAL
+    #   mobile_number         - OPTIONAL, XXXYYYZZZZ format
+    #   postal_code_text      - OPTIONAL, XXXXX format
+    #   classification        - OPTIONAL, the internal group or classification a user belongs to
+    #   delivery_email        - OPTIONAL, whether a user should receive email notifications
+    #   delivery_sms          - OPTIONAL, whether a user should receive sms notifications
     #
     # Returns a URL you can use for redirecting a user. Notice this will expire, so it should
     # be generated and used only when a user actually wants to log into checkd.in.
     def login_url options
       email                 = options.delete(:email)           or raise ArgumentError.new("No :email passed for user")
       user_identifier       = options.delete(:user_identifier) or raise ArgumentError.new("No :user_identifier passed for user")
-      authentication_action = options.delete(:authentication_action)
 
-      authenticated_parameters = build_authenticated_parameters(email, user_identifier, authentication_action)
+      authenticated_parameters = build_authenticated_parameters(email, user_identifier, options)
 
       [checkdin_landing_url, authenticated_parameters.to_query].join
     end
@@ -58,22 +67,22 @@ module Checkdin
     # Private: Build a signed hash of parameters for redirecting the user to checkd.in.
     #
     # Returns a hash including a secure message digest and the current timestamp
-    def build_authenticated_parameters email, user_identifier, authentication_action = nil
-      build_request(email, user_identifier, authentication_action).tap do |request|
+    def build_authenticated_parameters email, user_identifier, options
+      build_request(email, user_identifier, options).tap do |request|
         request['digest'] = digest_request(request)
       end
     end
 
     private
-    def build_request email, user_identifier, authentication_action
+    def build_request email, user_identifier, options
+      stringified_options = stringify_keys(options)
+
       {
         'auth_timestamp' => Time.now.to_i,
         'client_id'      => client_identifier,
         'client_uid'     => user_identifier,
         'email'          => email,
-      }.tap do |request|
-        request['authentication_action'] = authentication_action if authentication_action
-      end
+      }.merge(stringified_options)
     end
 
     def digest_request request
@@ -81,5 +90,11 @@ module Checkdin
       OpenSSL::HMAC.hexdigest(OpenSSL::Digest::SHA256.new, bridge_secret, encoded_request)
     end
 
+    def stringify_keys hash
+      hash.inject({}) do |options, (key, value)|
+        options[key.to_s] = value
+        options
+      end
+    end
   end
 end

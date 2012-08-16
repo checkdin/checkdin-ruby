@@ -24,10 +24,10 @@ describe Checkdin::UserBridge, 'constructor' do
     instance.checkdin_landing_url.should == landing_url
   end
 
-  it "raises an error on unknown arguments" do
+  it "does not raise an error on unknown arguments" do
     expect do
       Checkdin::UserBridge.new(default_options.merge(:misspelled_option => 'error me'))
-    end.to raise_error(ArgumentError, /misspelled_option/)
+    end.to_not raise_error(ArgumentError, /misspelled_option/)
   end
 end
 
@@ -35,14 +35,16 @@ describe Checkdin::UserBridge, '#login_url' do
   let(:instance) { Checkdin::UserBridge.new(:client_identifier    => client_identifier,
                                             :bridge_secret        => bridge_secret,
                                             :checkdin_landing_url => checkdin_landing_url) }
-  subject { instance.login_url(:email                 => user_email,
-                               :user_identifier       => user_identifier,
-                               :authentication_action => authentication_action) }
+  subject { instance.login_url(options) }
+  let(:options) { default_options }
+  let(:default_options) {{
+    :email           => user_email,
+    :user_identifier => user_identifier
+  }}
   let(:client_identifier) { 'client-1704' }
   let(:bridge_secret) { '123-shared-secret' }
   let(:user_email) { 'bob@example.com' }
   let(:user_identifier) { '17-batch1-bob' }
-  let(:authentication_action) { nil }
   let(:checkdin_landing_url) { nil }
   let(:timestamp) { 1325605589 }
 
@@ -64,11 +66,21 @@ describe Checkdin::UserBridge, '#login_url' do
     end
 
     context "with an optional action set" do
-      let(:authentication_action) { 'authenticate_facebook' }
+      let(:options) { default_options.merge(:authentication_action => 'authenticate_facebook') }
 
       it "includes the authentication_action" do
         Timecop.freeze(Time.at(timestamp)) do
           subject.should == "https://app.checkd.in/user_landing?auth_timestamp=1325605589&authentication_action=authenticate_facebook&client_id=client-1704&client_uid=17-batch1-bob&digest=f27f0b46e8fb383f53e48d02da51be05f573d4aa80d727acfe08d2cc76db2861&email=bob%40example.com"
+        end
+      end
+    end
+
+    context "with additional attributes set" do
+      let(:options) { default_options.merge(:delivery_email => false) }
+
+      it "includes the additional attriubtes" do
+        Timecop.freeze(Time.at(timestamp)) do
+          subject.should == "https://app.checkd.in/user_landing?auth_timestamp=1325605589&client_id=client-1704&client_uid=17-batch1-bob&delivery_email=false&digest=f3950bee05fb1ca97727d9c190f2b30cfbdcf74a7150b3c337afbfc557d988dc&email=bob%40example.com"
         end
       end
     end
@@ -95,7 +107,8 @@ end
 
 describe Checkdin::UserBridge, '#build_authenticated_parameters' do
   let(:instance) { Checkdin::UserBridge.new(:client_identifier => client_identifier, :bridge_secret => bridge_secret) }
-  subject { instance.build_authenticated_parameters(user_email, user_identifier) }
+  subject { instance.build_authenticated_parameters(user_email, user_identifier, options) }
+  let(:options) { {} }
   let(:client_identifier) { 'client-1704' }
   let(:bridge_secret) { '123-shared-secret' }
   let(:user_email) { 'bob@example.com' }
@@ -114,15 +127,15 @@ describe Checkdin::UserBridge, '#build_authenticated_parameters' do
     end
   end
 
-  context "with an authenticated action" do
-    subject { instance.build_authenticated_parameters(user_email, user_identifier, authentication_action) }
-    let(:authentication_action) { 'authenticate_facebook' }
+  context "with an authenticated action in the options" do
+    subject { instance.build_authenticated_parameters(user_email, user_identifier, options) }
+    let(:options) { {:authentication_action => 'authenticate_facebook'} }
 
     it "should output a hash with a different digest and the authenticated_action included" do
       Timecop.freeze(Time.at(timestamp)) do
         subject.should == {
           'auth_timestamp'        => timestamp,
-          'authentication_action' => authentication_action,
+          'authentication_action' => 'authenticate_facebook',
           'client_id'             => client_identifier,
           'client_uid'            => user_identifier,
           'email'                 => user_email,
