@@ -1,0 +1,48 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://app.checkd.in:443/api/v1/activities/18881/vote?client_id={client_id}&client_secret={client_secret}&user_id=36
+    body:
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.1
+      content-length:
+      - "0"
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.11
+      date:
+      - Mon, 09 Apr 2012 10:42:37 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - "\"22ee544aa801964a479d745eb9bdba07\""
+      cache-control:
+      - max-age=0, private, must-revalidate
+      set-cookie:
+      - _checkdin_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTYyNjY0NTlhMThkZmFjNTJlMzcwMTA4NTc0OThiMWZlBjsAVA%3D%3D--c70adeb132862f669fc85fc8e5e643ea2b811b57; domain=app.checkd.in; path=/; HttpOnly; secure
+      x-runtime:
+      - "0.03{client_secret}"
+      x-rack-cache:
+      - invalidate, pass
+    body: |
+      {"activity":{"type":"twitter_status","id":18881,"created_at":"2012-02-21T16:08:55-06:00","acted_on":{"type":"twitter_status","tweet_fk":172080368760000512,"status":"Check out what I purchased at #mynordstrom http://t.co/DKUXa41E","photo_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg","photo_thumbnail_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg:thumb"},"user":{"id":36,"username":"demomattloadtest","avatar_url":null,"href":"https://app.checkd.in/api/v1/activities.json?user_id=36"},"vote_count":7}}
+
+    http_version: "1.1"

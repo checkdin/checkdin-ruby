@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Checkdin::Promotions do
 
   before do
-    @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
+    @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
   context "viewing a single promotion" do
@@ -30,6 +30,34 @@ describe Checkdin::Promotions do
 
     it "should only return the right number of results" do
       result.count.should == 2
+    end
+  end
+
+  context "viewing the votes leaderboard for a promotion" do
+    use_vcr_cassette
+    let(:result) { @client.promotion_votes_leaderboard(54, :limit => limit) }
+    let(:limit) { nil }
+
+    it "should return promotion information" do
+      result.promotion.title.should == "A voting promotion!"
+    end
+
+    it "should return a list of activities ordered by vote count" do
+      result.promotion.votes_leaderboard.activities.first.activity.vote_count.should == 7
+      result.promotion.votes_leaderboard.activities.last.activity.vote_count.should == 0
+    end
+
+    it "should return all activities" do
+      result.promotion.votes_leaderboard.activities.count.should == 3
+    end
+
+    context "limiting the number of records returned" do
+      use_vcr_cassette
+      let(:limit) { 1 }
+
+      it "should only return limit number of records" do
+        result.promotion.votes_leaderboard.activities.count.should == 1
+      end
     end
   end
 end

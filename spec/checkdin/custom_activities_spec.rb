@@ -4,7 +4,7 @@ describe Checkdin::CustomActivities do
   use_vcr_cassette
 
   before do
-    @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
+    @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
   it "should report success when creating a custom activity" do

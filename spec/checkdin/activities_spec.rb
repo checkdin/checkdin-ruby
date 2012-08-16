@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Checkdin::Activities do
 
   before do
-    @client = Checkdin::Client.new(:client_id => '123456', :client_secret => '7890')
+    @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
   context "viewing a single activity" do
@@ -42,5 +42,31 @@ describe Checkdin::Activities do
       activity_user_usernames.should == ["krhoch", "krhoch"]
     end
 
+  end
+
+  context "voting for an activity" do
+    use_vcr_cassette
+    let(:result) { @client.add_vote_on_activity(18881) }
+
+    it "should make the activity's information available" do
+      result.activity.type.should == "twitter_status"
+    end
+
+    it "should register the vote" do
+      result.activity.vote_count.should == 6
+    end
+
+    context "passing an email" do
+      use_vcr_cassette
+      let(:result) { @client.add_vote_on_activity(18881, :user_id => 36)}
+
+      it "should register the vote as normal" do
+        result.activity.type.should == "twitter_status"
+      end
+
+      it "should up the vote count as normal" do
+        result.activity.vote_count.should == 7
+      end
+    end
   end
 end

@@ -3,6 +3,7 @@ require 'faraday_middleware'
 
 require 'openssl'
 require 'active_support/core_ext/object/to_query'
+require 'active_support/core_ext/object/blank'
 
 require 'checkdin/version'
 require 'checkdin/leaderboard'
@@ -13,5 +14,7 @@ require 'checkdin/activities'
 require 'checkdin/won_rewards'
 require 'checkdin/promotions'
 require 'checkdin/campaigns'
+require 'checkdin/votes'
 require 'checkdin/client'
 require 'checkdin/api_error'
+

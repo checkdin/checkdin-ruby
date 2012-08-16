@@ -2,8 +2,8 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: https://app.checkd.in:443/api/v1/activities/236?client_id=123456&client_secret=7890
-    body: !!null 
+    uri: https://app.checkd.in:443/api/v1/activities/236?client_id={client_id}&client_secret={client_secret}
+    body: !!null
     headers:
       accept:
       - application/json

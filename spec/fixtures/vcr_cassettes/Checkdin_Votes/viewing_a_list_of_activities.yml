@@ -1,0 +1,44 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://app.checkd.in:443/api/v1/votes?client_id={client_id}&client_secret={client_secret}
+    body:
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.2
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.11
+      date:
+      - Tue, 17 Apr 2012 15:57:36 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - "\"0b1ec43ded6cc7875c4c284e7e112874\""
+      cache-control:
+      - must-revalidate, private, max-age=0
+      x-runtime:
+      - "0.047213"
+      x-rack-cache:
+      - miss
+    body: "{\"total_pages\":1,\"votes\":[{\"vote\":{\"created_at\":\"2012-04-09T05:42:37-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-09T05:38:50-05:00\",\"user\":null,\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:52:18-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:52:12-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:51:53-05:00\",\"user\":null,\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:30:05-05:00\",\"user\":null,\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:26:47-05:00\",\"user\":null,\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}}]}"
+    http_version: "1.1"

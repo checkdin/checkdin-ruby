@@ -2,8 +2,8 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: https://app.checkd.in:443/api/v1/promotions/8?client_id=123456&client_secret=7890
-    body: !!null 
+    uri: https://app.checkd.in:443/api/v1/promotions/8?client_id={client_id}&client_secret={client_secret}
+    body: !!null
     headers:
       accept:
       - application/json
@@ -43,7 +43,7 @@
       rewarded with a free coffee!  Enjoy!","terms":"Offer only good some places.","above_21_only":false,"ends_at":"2012-10-16T07:51:32-05:00","href":"https://app.checkd.in/api/v1/promotions/8.json","type":"promotion_lbs_checkin","place_groups":[{"place_group":{"name":"Stores","href":"https://app.checkd.in/api/v1/place_groups/2.json"}}],"reward":{"private_delivery_description":"Thank
       you for checking-in five times! Because you
       are such a loyal customer, we would like to treat you to a free medium coffee!
-      ","public_delivery_description":"Free coffee 
+      ","public_delivery_description":"Free coffee
       for every 5 visits - check it out - http://something.com","single_delivery":false,"type":"badge_reward","reward_file":"DD-5thCheckinBarcode.png"},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":5,"human_readable":"Rewarded
       once when a user reaches 5 relevant actions or points."},"campaign":{"name":"Check
       In To Win","description":"Check in to win free coffee and

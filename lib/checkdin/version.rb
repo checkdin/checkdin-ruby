@@ -1,3 +1,3 @@
 module Checkdin
-  VERSION = '0.1.1.pre'
+  VERSION = '0.2.6'
 end

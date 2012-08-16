@@ -1,4 +1,21 @@
-current unreleased version
+0.2.5
+ * Added support for custom api_url endpoint
+ * APIError now includes body response.
+
+0.2.4 - Released April 17, 2012
+ * Fixing up incompleted file requirements in gemspec.
+
+0.2.3 - Release April 17, 2012
+ * Added support for the votes endpoint
+
+0.2.2 - Release April 9, 2012
+ * Added the ability to vote for activities in a voting-enabled promotion
+ * Added the votes leaderboard endpoint for voting-enabled promotions
+
+0.2.1 - Released March 11, 2012
+ * Added the ability to create users.
+
+0.2.0 - Released March 6, 2012
  * Removed jeweler dependency
  * Introduced Checkdin::VERSION for runtime version information
  * Checkdin::UserBridge added for creating and logging users in
