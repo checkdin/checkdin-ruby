@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
     "lib/checkdin/custom_activities.rb",
     "lib/checkdin/leaderboard.rb",
     "lib/checkdin/promotions.rb",
-    "lin/checkdin/push_api_subscriptions.rb",
+    "lib/checkdin/push_api_subscriptions.rb",
     "lib/checkdin/users.rb",
     "lib/checkdin/user_bridge.rb",
     "lib/checkdin/version.rb",
