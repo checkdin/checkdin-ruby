@@ -45,8 +45,9 @@ module Checkdin
     # @option options String :mobile_number         - OPTIONAL, XXXYYYZZZZ format
     # @option options String :postal_code_text      - OPTIONAL, XXXXX format
     # @option options String :classification        - OPTIONAL, the internal group or classification a user belongs to
-    # @option options String :delivery_email        - OPTIONAL, whether a user should receive email notifications
-    # @option options String :delivery_sms          - OPTIONAL, whether a user should receive sms notifications
+    # @option options Boolean :delivery_email       - OPTIONAL, whether a user should receive email notifications
+    # @option options Boolean :delivery_sms         - OPTIONAL, whether a user should receive sms notifications
+    # @option options Integer :campaign_id          - OPTIONAL, automatically join a user to this campaign, rewarding existing known actions
 
     def create_user(options={})
       response = connection.post do |req|

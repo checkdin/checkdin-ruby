@@ -1,0 +1,32 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :put
+    uri: http://checkd-in-core.dev:80/api/v1/push_api_subscriptions/2/enable?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.8
+      content-length: 
+      - "0"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - application/json; charset=utf-8
+      x-ua-compatible: 
+      - IE=Edge
+      etag: 
+      - "\"9f2a4641681422d0e3958302e9dc7f15\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-request-id: 
+      - 05ba934d598cec7b44ef90346ea4f515
+      x-runtime: 
+      - "0.061926"
+    body: "{\"push_api_subscription\":{\"push_url\":\"http://campaign-specific.com\",\"state\":\"enabled\",\"reward_won_monitored\":false,\"activity_created_monitored\":false,\"user_created_monitored\":true,\"secret\":\"06c5b4a97848faec4a94\",\"campaign\":{\"href\":\"{api_url}/campaigns/7.json\",\"id\":7}}}"
+    http_version: "1.1"

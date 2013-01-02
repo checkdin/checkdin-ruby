@@ -13,6 +13,7 @@ module Checkdin
     include Leaderboard
     include Votes
     include Clients
+    include PushApiSubscriptions
 
     attr_reader :client_id, :client_secret
     attr_reader :ssl

@@ -1,3 +1,7 @@
+0.2.9
+ * Added push API subscription methods
+ * Updated documentation based on new user options.
+
 0.2.8
  * Added support for classification leaderboard
  * Updated user bridge to support passing all possible options for a user

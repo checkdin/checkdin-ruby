@@ -16,6 +16,7 @@ require 'checkdin/promotions'
 require 'checkdin/campaigns'
 require 'checkdin/votes'
 require 'checkdin/clients'
+require 'checkdin/push_api_subscriptions'
 require 'checkdin/client'
 require 'checkdin/api_error'
 

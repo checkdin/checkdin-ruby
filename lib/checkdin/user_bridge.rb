@@ -5,7 +5,7 @@ module Checkdin
     attr :client_identifier, :bridge_secret
     attr :checkdin_landing_url
 
-    # Used to build the authenticated parameters for logging in an end-user on 
+    # Used to build the authenticated parameters for logging in an end-user on
     # checkd.in via a redirect.
     #
     # options              - a hash with a the following values defined:
@@ -52,6 +52,7 @@ module Checkdin
     #   classification        - OPTIONAL, the internal group or classification a user belongs to
     #   delivery_email        - OPTIONAL, whether a user should receive email notifications
     #   delivery_sms          - OPTIONAL, whether a user should receive sms notifications
+    #   campaign_id           - OPTIONAL, automatically join a user to this campaign, rewarding existing known actions
     #
     # Returns a URL you can use for redirecting a user. Notice this will expire, so it should
     # be generated and used only when a user actually wants to log into checkd.in.
