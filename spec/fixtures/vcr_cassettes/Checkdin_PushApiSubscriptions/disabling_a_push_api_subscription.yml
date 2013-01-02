@@ -1,0 +1,32 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :put
+    uri: http://checkd-in-core.dev:80/api/v1/push_api_subscriptions/1/disable?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers: 
+      accept: 
+      - application/json
+      user-agent: 
+      - checkdin ruby gem 0.2.8
+      content-length: 
+      - "0"
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      content-type: 
+      - application/json; charset=utf-8
+      x-ua-compatible: 
+      - IE=Edge
+      etag: 
+      - "\"5dc194884d762f9b11af7d509861636d\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-request-id: 
+      - 65ef6ad8a9be72f97cbb4f1480e3f575
+      x-runtime: 
+      - "0.114155"
+    body: "{\"push_api_subscription\":{\"push_url\":\"http://test.com\",\"state\":\"disabled\",\"reward_won_monitored\":false,\"activity_created_monitored\":true,\"user_created_monitored\":false,\"secret\":\"6dec79a3034468c530fc\",\"campaign\":null}}"
+    http_version: "1.1"
