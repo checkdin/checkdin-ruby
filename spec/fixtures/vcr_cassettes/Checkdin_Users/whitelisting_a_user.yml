@@ -1,0 +1,30 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :delete
+    uri: http://core.dev:80/api/v1/users/8198/blacklist?client_id={client_id}&client_secret={client_secret}
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.9
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      etag:
+      - ! '"a6a9288890978ca29e75bc0dcc34bf4e"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 1ffc94c34369e77dd655e30270ef750c
+      x-runtime:
+      - '0.113676'
+    body: ! '{"user":{"id":8198,"email":"3636@fakemail.bckstgr.com","username":"portia.dixon.33","mobile_number":null,"created_at":"2012-12-10T14:08:24-06:00","first_name":"Portia","last_name":"Dixon","birth_date":"1977-05-15","gender":"female","referral_token":"5cd5e13e70ab94bfd1e9","classification":null,"external_avatar_url":"http://graph.facebook.com/100004802792689/picture?type=square","delivery_sms":true,"delivery_email":true,"activity_state":"fresh","referral_url":"http://auth-preprod.bckstgr.com/r/5cd5e13e70ab94bfd1e9","referred_by_user_href":null,"avatar_url":"https://dev-checkdin-user.s3.amazonaws.com/uploads/8198/186218_100004802792689_536228678_q.jpg","authentications":null,"campaigns":null}}'
+    http_version: '1.1'
