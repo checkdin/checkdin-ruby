@@ -1,0 +1,32 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://core.dev:80/api/v1/users/blacklisted?client_id={client_id}&client_secret={client_secret}&limit=2
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.9
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      etag:
+      - ! '"252ef6a59fdf242873861ce734ffb0fd"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 8037ace3fef4d2c04b9061f52abe7993
+      x-runtime:
+      - '0.204441'
+    body: ! '{"total_pages":1,"users":[{"user":{"id":8199,"username":"timothy.sanders.39948","created_at":"2012-12-17T23:34:54-06:00","first_name":"Timothy","last_name":"Sanders","birth_date":"1987-04-18","gender":"male","external_avatar_url":"http://graph.facebook.com/100004846150211/picture?type=square","activity_state":"blacklisted","avatar_url":"https://dev-checkdin-user.s3.amazonaws.com/uploads/8199/211683_100004846150211_772921663_q.jpg","campaign_count":1,"href":"{api_url}/users/8199.json"}}]}'
+    http_version: '1.1'
