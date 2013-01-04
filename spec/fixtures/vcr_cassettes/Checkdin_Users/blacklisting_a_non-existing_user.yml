@@ -1,0 +1,30 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :put
+    uri: http://core.dev:80/api/v1/users/0/blacklist?client_id={client_id}&client_secret={client_secret}
+    body: !!null 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.9
+      content-length:
+      - '0'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 404
+      message: Not Found
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      cache-control:
+      - no-cache
+      x-request-id:
+      - 683dd9e3a434f21f6c991fc484d80e41
+      x-runtime:
+      - '0.059023'
+    body: ! '{"error":"record_not_found"}'
+    http_version: '1.1'
