@@ -1,3 +1,6 @@
+unreleased
+* Added support for blacklisting users
+
 0.2.9
  * Added push API subscription methods
  * Updated documentation based on new user options.
