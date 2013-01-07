@@ -1,1 +1,1 @@
-rvm use --create 1.9.2@checkdin-ruby
+rvm --create $(cat .rbenv-version)@checkdin-main
