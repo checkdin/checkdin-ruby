@@ -91,4 +91,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock", "~> 1.7.10"
   s.add_development_dependency "vcr", "~> 1.11.3"
   s.add_development_dependency "timecop"
+  s.add_development_dependency "rake"
 end
