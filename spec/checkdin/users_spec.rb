@@ -153,4 +153,29 @@ describe Checkdin::Users do
       end.to raise_error(Checkdin::APIError, /404/)
     end
   end
+
+  context "creating a point redemption" do
+    context "with valid parameters" do
+      use_vcr_cassette
+      let(:result) { @client.create_user_point_redemption(961,
+                                                          :point_value => 1000,
+                                                          :rand_param  => "something-here") }
+
+      it "should return success" do
+        result.result.should == "success"
+      end
+    end
+
+    context "with invalid parameters" do
+      use_vcr_cassette
+
+      it "should return an error 400" do
+        expect do
+          @client.create_user_point_redemption(961)
+        end.to raise_error(Checkdin::APIError, /400/)
+      end
+    end
+  end
 end
+
+

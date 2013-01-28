@@ -122,5 +122,18 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    # Create a point redemption for a user
+    #
+    # param [Integer] id The ID of the user
+    # @param [Hash]  options This options hash will store any non-required parameters for later use.
+    # @option options String :point_value - The number of points to redeem, required.
+
+    def create_user_point_redemption(id, options={})
+      response = connection.post do |req|
+        req.url "users/#{id}/point_redemptions", options
+      end
+      return_error_or_body(response)
+    end
+
   end
 end
