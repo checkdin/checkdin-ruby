@@ -1,0 +1,32 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://checkd-in-core.dev:80/api/v1/users/961/point_redemptions?client_id={client_id}&client_secret={client_secret}&point_value=1000&rand_param=something-here
+    body: 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.2.9
+      content-length:
+      - '0'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      etag:
+      - ! '"25dcccbf1db0d4bfaa67ffd829a1dc56"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - d5fc55a4edba93e31141cacf886e19b0
+      x-runtime:
+      - '1.332098'
+    body: ! '{"result":"success"}'
+    http_version: '1.1'

@@ -1,3 +1,7 @@
+0.3.0
+ * Added support for blacklisting users
+ * Added support for creating point redemptions for a user
+
 0.2.9
  * Added push API subscription methods
  * Updated documentation based on new user options.

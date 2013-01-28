@@ -92,6 +92,48 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    # Get a list of all blacklisted users for the authenticating client.
+    #
+    # @param [Hash]  options
+    # @option options Integer :limit - The maximum number of records to return.
+
+    def blacklisted(options={})
+      response = connection.get do |req|
+        req.url "users/blacklisted", options
+      end
+      return_error_or_body(response)
+    end
+
+    # Blacklist user from creating activities
+    #
+    # param [Integer] id The ID of the user
+
+    def blacklist(id)
+      response = connection.put("users/#{id}/blacklist")
+      return_error_or_body(response)
+    end
+
+    # Whitelist user that has been blacklisted
+    #
+    # param [Integer] id The ID of the user
+
+    def whitelist(id)
+      response = connection.delete("users/#{id}/blacklist")
+      return_error_or_body(response)
+    end
+
+    # Create a point redemption for a user
+    #
+    # param [Integer] id The ID of the user
+    # @param [Hash]  options This options hash will store any non-required parameters for later use.
+    # @option options String :point_value - The number of points to redeem, required.
+
+    def create_user_point_redemption(id, options={})
+      response = connection.post do |req|
+        req.url "users/#{id}/point_redemptions", options
+      end
+      return_error_or_body(response)
+    end
 
   end
 end

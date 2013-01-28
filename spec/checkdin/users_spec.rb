@@ -83,7 +83,7 @@ describe Checkdin::Users do
   context "creating an authentication" do
     context "with valid parameters" do
       use_vcr_cassette
-      let(:result) { @client.create_user_authentication(7887, 
+      let(:result) { @client.create_user_authentication(7887,
                                                         :provider    => "foursquare",
                                                         :uid         => "1234",
                                                         :oauth_token => "111",
@@ -106,4 +106,76 @@ describe Checkdin::Users do
       end
     end
   end
+
+  context "viewing a list of blacklisted users" do
+    use_vcr_cassette
+    let(:result) { @client.blacklisted(:limit => 2) }
+
+    it "should make a list of blacklisted users" do
+      user_usernames = result.users.collect{|u| u.user.username}
+      user_usernames.should == ["timothy.sanders.39948"]
+    end
+
+    it "should only return the right number of results" do
+      result.users.count.should == 1
+    end
+
+  end
+
+  context "blacklisting a user" do
+    use_vcr_cassette
+    let(:result) { @client.blacklist(8198) }
+
+    it "should return user's basic information" do
+      result.user.should_not be_nil
+    end
+
+    it "should return user with activity_state of blacklisted" do
+      result.user.activity_state.should == 'blacklisted'
+    end
+  end
+
+  context "whitelisting a user" do
+    use_vcr_cassette
+    let(:result) { @client.whitelist(8198) }
+
+    it "should return user with activity_state of fresh" do
+      result.user.activity_state.should == 'fresh'
+    end
+  end
+
+  context "blacklisting a non-existing user" do
+    use_vcr_cassette
+
+    it "should throw an error" do
+      expect do
+          @client.blacklist(0)
+      end.to raise_error(Checkdin::APIError, /404/)
+    end
+  end
+
+  context "creating a point redemption" do
+    context "with valid parameters" do
+      use_vcr_cassette
+      let(:result) { @client.create_user_point_redemption(961,
+                                                          :point_value => 1000,
+                                                          :rand_param  => "something-here") }
+
+      it "should return success" do
+        result.result.should == "success"
+      end
+    end
+
+    context "with invalid parameters" do
+      use_vcr_cassette
+
+      it "should return an error 400" do
+        expect do
+          @client.create_user_point_redemption(961)
+        end.to raise_error(Checkdin::APIError, /400/)
+      end
+    end
+  end
 end
+
+
