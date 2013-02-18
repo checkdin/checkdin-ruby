@@ -135,5 +135,11 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    def view_user_full_description(id)
+      response = connection.get do |req|
+        req.url "users/#{id}/full"
+      end
+      return_error_or_body(response)
+    end
   end
 end

@@ -176,6 +176,18 @@ describe Checkdin::Users do
       end
     end
   end
+
+  context "view user's full description" do
+    use_vcr_cassette
+
+    let(:result) { @client.view_user_full_description(8198) }
+    it "should return an user object" do
+      result.should_not be_blank?
+    end
+    it "should have authentications" do
+      result.user.authentications.count.should_not == 0
+    end
+  end
 end
 
 
