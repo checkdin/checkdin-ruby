@@ -1,0 +1,32 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://checkd-in-core.dev:80/api/v1/clients/leaderboard?client_id={client_id}&client_secret={client_secret}&limit=5
+    body: 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.3.0
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      etag:
+      - ! '"346e362c584cea858024494dff6b282f"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 6b8cfff9a37f787c53a0e35292c76480
+      x-runtime:
+      - '0.033447'
+    body: ! '{"total_pages":3,"point_accounts":[{"point_account":{"balance":961,"campaign":null,"user":{"id":961,"username":"leader","avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/961.json"}}},{"point_account":{"balance":960,"campaign":null,"user":{"id":960,"username":null,"avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/960.json"}}},{"point_account":{"balance":959,"campaign":null,"user":{"id":959,"username":null,"avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/959.json"}}},{"point_account":{"balance":958,"campaign":null,"user":{"id":958,"username":null,"avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/958.json"}}},{"point_account":{"balance":957,"campaign":null,"user":{"id":957,"username":null,"avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/957.json"}}}]}'
+    http_version: '1.1'
