@@ -145,5 +145,14 @@ module Checkdin
       end
       return_error_or_body(response)
     end
+
+    # Get a list of a user's point accounts
+    #
+    # param [Integer] id the ID of the user
+
+    def user_point_accounts(id)
+      response = connection.get("users/#{id}/point_accounts")
+      return_error_or_body(response)
+    end
   end
 end
