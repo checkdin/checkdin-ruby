@@ -188,6 +188,16 @@ describe Checkdin::Users do
       result.user.authentications.count.should_not == 0
     end
   end
+
+  context "view user's point accounts" do
+    use_vcr_cassette
+
+    let(:result) { @client.user_point_accounts(962) }
+
+    it "should return a list of point accounts" do
+      result.point_accounts.count.should == 2
+    end
+  end
 end
 
 
