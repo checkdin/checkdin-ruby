@@ -1,3 +1,8 @@
+0.3.1
+ * Added support for listing a user's point accounts
+ * Added support for new client and campaign-specific leaderboards
+ * Added support for full user information endpoint.
+
 0.3.0
  * Added support for blacklisting users
  * Added support for creating point redemptions for a user
