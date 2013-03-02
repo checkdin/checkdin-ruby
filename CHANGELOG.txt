@@ -1,3 +1,6 @@
+0.3.2
+ * Fixed whitelabel lookup to use new method of non-url identifiers.
+
 0.3.1
  * Added support for listing a user's point accounts
  * Added support for new client and campaign-specific leaderboards
