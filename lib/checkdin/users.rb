@@ -24,10 +24,10 @@ module Checkdin
 
     # Lookup the checkd.in ID of a user based on their whitelabel ID.
     #
-    # params [Integer] id The whitelabel identifier of the user (passed to checkd.in during creation)
+    # params [String] user_identifier The whitelabel identifier of the user (passed to checkd.in during creation)
 
-    def whitelabel_user_lookup(id)
-      response = connection.get("users/whitelabel/#{id}")
+    def whitelabel_user_lookup(user_identifier)
+      response = connection.get("users/whitelabel.json?user_identifier=#{id}")
       return_error_or_body(response)
     end
 
