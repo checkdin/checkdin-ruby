@@ -1,3 +1,6 @@
+0.3.3
+ * Bugfix
+
 0.3.2
  * Fixed whitelabel lookup to use new method of non-url identifiers.
 
