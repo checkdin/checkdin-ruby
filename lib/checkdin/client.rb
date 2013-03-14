@@ -14,6 +14,7 @@ module Checkdin
     include Votes
     include Clients
     include PushApiSubscriptions
+    include PointAccountEntries
 
     attr_reader :client_id, :client_secret
     attr_reader :ssl
