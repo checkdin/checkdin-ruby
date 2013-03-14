@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "lib/checkdin/client.rb",
     "lib/checkdin/custom_activities.rb",
     "lib/checkdin/leaderboard.rb",
+    "lib/checkdin/point_account_entries.rb",
     "lib/checkdin/promotions.rb",
     "lib/checkdin/push_api_subscriptions.rb",
     "lib/checkdin/users.rb",
