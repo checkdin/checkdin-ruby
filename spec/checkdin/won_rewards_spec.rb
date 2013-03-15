@@ -42,4 +42,14 @@ describe Checkdin::WonRewards do
     end
 
   end
+
+  context "retracting a won reward" do
+    use_vcr_cassette
+    let(:result) { @client.retract_won_reward(1081) }
+
+    it "should return success" do
+      result.result.should == "success"
+    end
+  end
+
 end

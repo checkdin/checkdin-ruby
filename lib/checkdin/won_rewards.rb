@@ -25,5 +25,13 @@ module Checkdin
       return_error_or_body(response)
     end
 
+    # Retract a won reward - this will also create a corresponding negative points entry if needed.
+    #
+    # param [Integer] id The ID of the reward
+
+    def retract_won_reward(id)
+      response = connection.post("won_rewards/#{id}/retract")
+      return_error_or_body(response)
+    end
   end
 end
