@@ -4,12 +4,14 @@ module Checkdin
     attr_reader :status, :body
 
     def initialize(status, body)
-      @status   = status
-      @body     = body
+      @status = status
+      @body   = body
+      super(message)
     end
 
     def message
-      "Status Code: #{status}\nBody: #{body}"
+      "status_code:#{status} body:#{body.inspect}"
     end
+
   end
 end

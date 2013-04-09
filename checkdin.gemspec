@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
     "lib/checkdin/won_rewards.rb"
   ]
   s.files += Dir['spec/']
-  s.homepage = "http://github.com/mattmueller/checkdin"
+  s.homepage = "http://github.com/mattmueller/checkdin-ruby"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"

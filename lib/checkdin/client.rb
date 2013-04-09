@@ -66,7 +66,7 @@ module Checkdin
     # Added just for convenience to avoid having to traverse farther down the response just to get to returned data.
 
     def return_error_or_body(response)
-      if response.status == 200
+      if response.status / 100 == 2
         response.body
       else
         raise Checkdin::APIError.new(response.status, response.body)

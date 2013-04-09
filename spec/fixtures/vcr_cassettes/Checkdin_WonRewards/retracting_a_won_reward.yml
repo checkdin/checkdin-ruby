@@ -1,0 +1,32 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://checkd-in-core.dev:80/api/v1/won_rewards/1081/retract?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.3.4
+      content-length:
+      - '0'
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      x-ua-compatible:
+      - IE=Edge
+      etag:
+      - ! '"25dcccbf1db0d4bfaa67ffd829a1dc56"'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 079070216b7ba8958a3e449ef533a0cf
+      x-runtime:
+      - '1.348202'
+    body: ! '{"result":"success"}'
+    http_version: '1.1'
