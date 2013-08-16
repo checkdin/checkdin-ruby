@@ -1,3 +1,6 @@
+unreleased
+ * Added support for creating promotions
+
 0.3.5
  * Output content of API errors when encountered
  * Fix homepage link in gemspec
