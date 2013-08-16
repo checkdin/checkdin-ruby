@@ -60,4 +60,38 @@ describe Checkdin::Promotions do
       end
     end
   end
+
+  context "create custom_activity promotion" do
+    use_vcr_cassette
+
+    let(:campaign_id) { 37 }
+    let(:promotion_short_name) { "custom_activity" }
+    let(:promotion_params) {{
+      campaign_id: campaign_id,
+      promotion:{
+        title: "Some awesome promotion",
+        custom_activity_node: {
+          name: 'my-custom'
+        },
+        trigger_schedule: {
+          winner_picked: 'activity_interval',
+          rewarding: 'once',
+          interval: 5
+        },
+        reward: reward_params
+      }
+    }}
+
+    let(:reward_params) {{
+      type: 'point_reward',
+      reward_points: 27
+    }}
+
+    let(:result){ @client.create_promotion(promotion_short_name, promotion_params) }
+
+    it "should return the created promotion" do
+      result.should_not be_nil
+    end
+
+  end
 end
