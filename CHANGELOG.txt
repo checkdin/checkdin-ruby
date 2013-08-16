@@ -1,4 +1,4 @@
-unreleased
+0.3.6
  * Added support for creating promotions
 
 0.3.5
