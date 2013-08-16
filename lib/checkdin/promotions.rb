@@ -39,10 +39,9 @@ module Checkdin
     end
 
     # Create a promotion for campaign
-    #
+    # param [String] promotion_short_name The promotion_type eg: custom_activity or twitter_activity
     # param [Integer] campaign_id - The ID of the campaign
     # param [Hash]  promotion - promotion create paramaters
-    #   param [String] promotion_short_name The promotion_type eg: custom_activity or twitter_activity
     #   @param [Hash] options
     #   @option options String :title
     #   @option options String :participant_status_message
