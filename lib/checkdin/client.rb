@@ -15,6 +15,7 @@ module Checkdin
     include Clients
     include PushApiSubscriptions
     include PointAccountEntries
+    include TwitterHashtagStreams
 
     attr_reader :client_id, :client_secret
     attr_reader :ssl
