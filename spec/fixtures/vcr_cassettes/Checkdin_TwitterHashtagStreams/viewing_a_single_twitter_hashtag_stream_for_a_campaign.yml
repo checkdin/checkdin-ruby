@@ -1,0 +1,46 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://staging:cKGdyvb4gQD9YJg3cACV@staging.checkd.in:443/api/v1/campaigns/58/twitter_hashtag_streams/3?client_id={client_id}&client_secret={client_secret}
+    body: 
+    headers:
+      accept:
+      - application/json
+      user-agent:
+      - checkdin ruby gem 0.3.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.4.2
+      date:
+      - Wed, 04 Sep 2013 19:43:01 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      status:
+      - 200 OK
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - ! '"3391ddba188b0ac333df3d62511fcceb"'
+      cache-control:
+      - must-revalidate, private, max-age=0
+      x-request-id:
+      - 15abeed2344a94c49f66271f709f76bc
+      x-runtime:
+      - '0.258406'
+      x-rack-cache:
+      - miss
+      strict-transport-security:
+      - max-age=31536000
+    body: ! '{"twitter_hashtag_stream":{"id":3,"twitter_hashtag":"#banana","hashtag_twitter_statuses_count":1345,"created_at":"2013-09-04T14:26:45-05:00","updated_at":"2013-09-04T14:26:45-05:00"}}'
+    http_version: '1.1'

@@ -18,6 +18,8 @@ require 'checkdin/votes'
 require 'checkdin/clients'
 require 'checkdin/push_api_subscriptions'
 require 'checkdin/point_account_entries'
+require 'checkdin/twitter_hashtag_streams'
 require 'checkdin/client'
 require 'checkdin/api_error'
+
 
