@@ -33,7 +33,8 @@ Gem::Specification.new do |s|
     "lib/checkdin/version.rb",
     "lib/checkdin/votes.rb",
     "lib/checkdin/clients.rb",
-    "lib/checkdin/won_rewards.rb"
+    "lib/checkdin/won_rewards.rb",
+    "lib/checkdin/twitter_hashtag_streams.rb"
   ]
   s.files += Dir['spec/']
   s.homepage = "http://github.com/mattmueller/checkdin-ruby"
