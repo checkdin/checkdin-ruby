@@ -2,8 +2,8 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: https://staging:cKGdyvb4gQD9YJg3cACV@staging.checkd.in:443/api/v1/campaigns/58/twitter_hashtag_streams?client_id={client_id}&client_secret={client_secret}
-    body: 
+    uri: https://staging.checkd.in:443/api/v1/campaigns/58/twitter_hashtag_streams?client_id={client_id}&client_secret={client_secret}
+    body:
     headers:
       accept:
       - application/json
