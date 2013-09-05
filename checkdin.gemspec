@@ -52,8 +52,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rdoc", "~> 3.12"
   s.add_development_dependency "bundler", "~> 1.0"
   s.add_development_dependency "simplecov", '~> 0.5.4'
-  s.add_development_dependency "webmock", "~> 1.7.10"
-  s.add_development_dependency "vcr", "~> 1.11.3"
+  s.add_development_dependency "webmock", ['>= 1.8.0', '< 1.12.0']
+  s.add_development_dependency "vcr", "~> 2.5.0"
   s.add_development_dependency "timecop"
   s.add_development_dependency "rake"
 end
