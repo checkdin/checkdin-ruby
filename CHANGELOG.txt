@@ -1,3 +1,6 @@
+0.3.8
+  * Fix oversight
+
 0.3.7
  * Added support for fetching twitter_hashtag_streams
 
