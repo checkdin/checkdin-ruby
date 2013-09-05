@@ -1,44 +1,51 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :post
+---
+http_interactions:
+- request:
+    method: post
     uri: https://app.checkd.in:443/api/v1/users/7887/authentications?client_id={client_id}&client_secret={client_secret}
-    body: 
-    headers: 
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-      user-agent: 
+      User-Agent:
       - checkdin ruby gem 0.2.5
-      content-length: 
-      - "0"
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+      Content-Length:
+      - '0'
+  response:
+    status:
       code: 400
       message: Bad Request
-    headers: 
-      server: 
+    headers:
+      Server:
       - nginx/1.0.11
-      date: 
+      Date:
       - Mon, 25 Jun 2012 15:51:52 GMT
-      content-type: 
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding: 
+      Transfer-Encoding:
       - chunked
-      connection: 
+      Connection:
       - keep-alive
-      status: 
+      Status:
       - 400 Bad Request
-      strict-transport-security: 
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      cache-control: 
+      Cache-Control:
       - no-cache
-      x-request-id: 
+      X-Request-Id:
       - 3316decdb6bdfef5b0c707c65def9cfa
-      x-runtime: 
-      - "0.233173"
-      x-rack-cache: 
+      X-Runtime:
+      - '0.233173'
+      X-Rack-Cache:
       - invalidate, pass
-    body: "{\"error\":\"Validation failed: Provider can't be blank, Provider is not included in the list, Uid can't be blank, Oauth token can't be blank\"}"
-    http_version: "1.1"
+    body:
+      encoding: UTF-8
+      string: ! '{"error":"Validation failed: Provider can''t be blank, Provider is
+        not included in the list, Uid can''t be blank, Oauth token can''t be blank"}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

@@ -1,51 +1,56 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
+http_interactions:
+- request:
+    method: get
     uri: https://app.checkd.in:443/api/v1/campaigns/2?client_id={client_id}&client_secret={client_secret}
-    body: !!null
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - Ruby gem
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/0.8.54
-      date:
+      Date:
       - Tue, 14 Feb 2012 16:41:56 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
+      Etag:
       - ! '"83ceef90ebd0f230d5475f7d9da461bd"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-runtime:
+      X-Runtime:
       - '0.181049'
-      x-rack-cache:
+      X-Rack-Cache:
       - miss
-    body: ! '{"campaign":{"name":"Check In To Win!","description":"Check in
-      to win free coffee and more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json","promotions":[{"promotion":{"title":"Get
-      a FREE coffee for every 5 check ins!","description":"Every 5 times you check
-      in at our new location you will be rewarded with a free
-      coffee!  Enjoy!","terms":"Offer only good at some locations.","above_21_only":false,"ends_at":"2012-10-16T07:51:32-05:00","href":"https://app.checkd.in/api/v1/promotions/8.json","type":"promotion_lbs_checkin","place_groups":[{"place_group":{"name":"Stores","href":"https://app.checkd.in/api/v1/place_groups/2.json"}}],"reward":{"private_delivery_description":"Thank
-      you for checking-in five times! Because you
-      are such a loyal customer, we would like to treat you to a free medium coffee!
-      ","public_delivery_description":"Free coffee
-      for every 5 visits - check it out - http://something.com","single_delivery":false,"type":"badge_reward","reward_file":"5thCheckinBarcode.png"},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":5,"human_readable":"Rewarded
-      once when a user reaches 5 relevant actions or points."}}}]}}'
+    body:
+      encoding: UTF-8
+      string: ! '{"campaign":{"name":"Check In To Win!","description":"Check in to
+        win free coffee and more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json","promotions":[{"promotion":{"title":"Get
+        a FREE coffee for every 5 check ins!","description":"Every 5 times you check
+        in at our new location you will be rewarded with a free coffee!  Enjoy!","terms":"Offer
+        only good at some locations.","above_21_only":false,"ends_at":"2012-10-16T07:51:32-05:00","href":"https://app.checkd.in/api/v1/promotions/8.json","type":"promotion_lbs_checkin","place_groups":[{"place_group":{"name":"Stores","href":"https://app.checkd.in/api/v1/place_groups/2.json"}}],"reward":{"private_delivery_description":"Thank
+        you for checking-in five times! Because you are such a loyal customer, we
+        would like to treat you to a free medium coffee! ","public_delivery_description":"Free
+        coffee for every 5 visits - check it out - http://something.com","single_delivery":false,"type":"badge_reward","reward_file":"5thCheckinBarcode.png"},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":5,"human_readable":"Rewarded
+        once when a user reaches 5 relevant actions or points."}}}]}}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

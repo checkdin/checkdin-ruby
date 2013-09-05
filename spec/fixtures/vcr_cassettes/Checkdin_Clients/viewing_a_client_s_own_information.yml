@@ -1,46 +1,52 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
+---
+http_interactions:
+- request:
+    method: get
     uri: https://staging.checkd.in:443/api/v1/clients/me?client_id={client_id}&client_secret={client_secret}
-    body: 
-    headers: 
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-      user-agent: 
+      User-Agent:
       - checkdin ruby gem 0.2.6
-      accept-encoding: 
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      Server:
       - nginx/1.0.11
-      date: 
+      Date:
       - Mon, 30 Jul 2012 13:53:06 GMT
-      content-type: 
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding: 
+      Transfer-Encoding:
       - chunked
-      connection: 
+      Connection:
       - keep-alive
-      status: 
+      Status:
       - 200 OK
-      strict-transport-security: 
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag: 
-      - "\"41ec4e0bf40b05f1cb6942e8ad224fc5\""
-      cache-control: 
+      Etag:
+      - ! '"41ec4e0bf40b05f1cb6942e8ad224fc5"'
+      Cache-Control:
       - must-revalidate, private, max-age=0
-      x-request-id: 
+      X-Request-Id:
       - 6d1c115ae2577724a25b9596b1ac492e
-      x-runtime: 
-      - "0.054093"
-      x-rack-cache: 
+      X-Runtime:
+      - '0.054093'
+      X-Rack-Cache:
       - miss
-    body: "{\"client\":{\"name\":\"A Test\",\"website\":\"http://example.com\",\"signup_redirect\":\"http://example.com/users/return_from_checkdin\",\"custom_domain\":\"custom.staging.checkd.in\",\"shared_authentication_secret\":\"12345\",\"push_api_secret\":null}}"
-    http_version: "1.1"
+    body:
+      encoding: UTF-8
+      string: ! '{"client":{"name":"A Test","website":"http://example.com","signup_redirect":"http://example.com/users/return_from_checkdin","custom_domain":"custom.staging.checkd.in","shared_authentication_secret":"12345","push_api_secret":null}}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

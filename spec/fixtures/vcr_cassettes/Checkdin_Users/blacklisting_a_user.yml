@@ -1,32 +1,38 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :put
+http_interactions:
+- request:
+    method: put
     uri: http://core.dev:80/api/v1/users/8198/blacklist?client_id={client_id}&client_secret={client_secret}
-    body: !!null 
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.2.9
-      content-length:
+      Content-Length:
       - '0'
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge
-      etag:
+      Etag:
       - ! '"c068445e18101a4297096e71a1a00323"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-request-id:
+      X-Request-Id:
       - 6322ee8088b88ce6b64878df283de27c
-      x-runtime:
+      X-Runtime:
       - '0.540251'
-    body: ! '{"user":{"id":8198,"email":"3636@fakemail.bckstgr.com","username":"portia.dixon.33","mobile_number":null,"created_at":"2012-12-10T14:08:24-06:00","first_name":"Portia","last_name":"Dixon","birth_date":"1977-05-15","gender":"female","referral_token":"5cd5e13e70ab94bfd1e9","classification":null,"external_avatar_url":"http://graph.facebook.com/100004802792689/picture?type=square","delivery_sms":true,"delivery_email":true,"activity_state":"blacklisted","referral_url":"http://auth-preprod.bckstgr.com/r/5cd5e13e70ab94bfd1e9","referred_by_user_href":null,"avatar_url":"https://dev-checkdin-user.s3.amazonaws.com/uploads/8198/186218_100004802792689_536228678_q.jpg","authentications":null,"campaigns":null}}'
+    body:
+      encoding: UTF-8
+      string: ! '{"user":{"id":8198,"email":"3636@fakemail.bckstgr.com","username":"portia.dixon.33","mobile_number":null,"created_at":"2012-12-10T14:08:24-06:00","first_name":"Portia","last_name":"Dixon","birth_date":"1977-05-15","gender":"female","referral_token":"5cd5e13e70ab94bfd1e9","classification":null,"external_avatar_url":"http://graph.facebook.com/100004802792689/picture?type=square","delivery_sms":true,"delivery_email":true,"activity_state":"blacklisted","referral_url":"http://auth-preprod.bckstgr.com/r/5cd5e13e70ab94bfd1e9","referred_by_user_href":null,"avatar_url":"https://dev-checkdin-user.s3.amazonaws.com/uploads/8198/186218_100004802792689_536228678_q.jpg","authentications":null,"campaigns":null}}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

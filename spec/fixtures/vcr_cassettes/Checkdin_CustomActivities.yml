@@ -1,47 +1,53 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :post
+http_interactions:
+- request:
+    method: post
     uri: https://app.checkd.in:443/api/v1/custom_activities?client_id={client_id}&client_secret={client_secret}&custom_activity_node_id=1&email=muellermr@gmail.com
-    body: !!null
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - Ruby gem
-      content-length:
+      Content-Length:
       - '0'
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/0.8.54
-      date:
+      Date:
       - Tue, 14 Feb 2012 19:24:10 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
+      Etag:
       - ! '"504422348827b80461a74d114bceb8f9"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      set-cookie:
+      Set-Cookie:
       - _checkdin_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWY2NTA3Nzk2Zjc1NWNlNTRiMDVkOTQ3YzJlNjM4NGZkBjsAVA%3D%3D--dd01c8f87c4d5c24b17a19a97d9ccb018ac40333;
         path=/; HttpOnly; secure
-      x-runtime:
+      X-Runtime:
       - '0.021071'
-      x-rack-cache:
+      X-Rack-Cache:
       - invalidate, pass
-    body: ! '{"result":"success"}
+    body:
+      encoding: UTF-8
+      string: ! '{"result":"success"}
 
 '
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

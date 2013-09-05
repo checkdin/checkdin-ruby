@@ -1,46 +1,52 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :post
+---
+http_interactions:
+- request:
+    method: post
     uri: https://app.checkd.in:443/api/v1/users/7887/authentications?client_id={client_id}&client_secret={client_secret}&nickname=foursquare_name&oauth_token=111&provider=foursquare&uid=1234
-    body: 
-    headers: 
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-      user-agent: 
+      User-Agent:
       - checkdin ruby gem 0.2.5
-      content-length: 
-      - "0"
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+      Content-Length:
+      - '0'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      Server:
       - nginx/1.0.11
-      date: 
+      Date:
       - Mon, 25 Jun 2012 15:47:30 GMT
-      content-type: 
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding: 
+      Transfer-Encoding:
       - chunked
-      connection: 
+      Connection:
       - keep-alive
-      status: 
+      Status:
       - 200 OK
-      strict-transport-security: 
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag: 
-      - "\"0d8d9602bdf1bba15f60fa4773e120d4\""
-      cache-control: 
+      Etag:
+      - ! '"0d8d9602bdf1bba15f60fa4773e120d4"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-request-id: 
+      X-Request-Id:
       - 5b8144f0bd8c9269b70819905ed2c648
-      x-runtime: 
-      - "0.224589"
-      x-rack-cache: 
+      X-Runtime:
+      - '0.224589'
+      X-Rack-Cache:
       - invalidate, pass
-    body: "{\"authentication\":{\"provider\":\"foursquare\",\"token_state\":\"fresh\",\"uid\":\"1234\",\"nickname\":\"foursquare_name\"}}"
-    http_version: "1.1"
+    body:
+      encoding: UTF-8
+      string: ! '{"authentication":{"provider":"foursquare","token_state":"fresh","uid":"1234","nickname":"foursquare_name"}}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0
