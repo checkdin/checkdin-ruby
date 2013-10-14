@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ! '{api_url}/clients/leaderboard?client_id={client_id}&client_secret={client_secret}&limit=5'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - checkdin ruby gem 0.3.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 14 Oct 2013 14:14:52 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"0742e70e97d0e7b5b524924e7033ac86"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 362a8b7e5c47b60a54ecc99184c51b3a
+      X-Runtime:
+      - '0.016416'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"total_pages":1,"point_accounts":[{"point_account":{"id":1,"balance":50,"lifetime_balance":0,"current_month_balance":0,"last_month_balance":0,"user":{"id":1,"client_uid":"got_whitelabel_uid_1","username":"primero","avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/1.json"},"campaign":null,"point_account_level":null}}]}'
+    http_version: 
+  recorded_at: Mon, 14 Oct 2013 14:14:52 GMT
+recorded_with: VCR 2.5.0

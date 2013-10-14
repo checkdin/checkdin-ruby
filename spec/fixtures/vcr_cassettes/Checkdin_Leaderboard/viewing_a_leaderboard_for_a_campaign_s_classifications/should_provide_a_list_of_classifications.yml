@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ! '{api_url}/campaigns/1/classification_leaderboard?client_id={client_id}&client_secret={client_secret}'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - checkdin ruby gem 0.3.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 14 Oct 2013 14:14:52 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a48ce9e6fa1d9315cd31d6c07c0a6f19"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 73b479a8823d8915c43db3513c265607
+      X-Runtime:
+      - '0.009405'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"classifications":[{"classification":"mugglers","total_points":71,"members":1}]}'
+    http_version: 
+  recorded_at: Mon, 14 Oct 2013 14:14:52 GMT
+recorded_with: VCR 2.5.0
