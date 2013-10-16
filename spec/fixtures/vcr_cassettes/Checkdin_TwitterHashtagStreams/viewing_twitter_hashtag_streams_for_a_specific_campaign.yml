@@ -1,46 +1,52 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: https://staging.checkd.in:443/api/v1/campaigns/58/twitter_hashtag_streams?client_id={client_id}&client_secret={client_secret}
+http_interactions:
+- request:
+    method: get
+    uri: http://checkd-in-core.dev:80/api/v1/campaigns/58/twitter_hashtag_streams?client_id={client_id}&client_secret={client_secret}
     body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.3.7
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/1.4.2
-      date:
+      Date:
       - Wed, 04 Sep 2013 19:27:29 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      status:
+      Status:
       - 200 OK
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
+      Etag:
       - ! '"ac909f261fa007408cae84bbc6697701"'
-      cache-control:
+      Cache-Control:
       - must-revalidate, private, max-age=0
-      x-request-id:
+      X-Request-Id:
       - aec534e3754d0af742257c5eb61ee511
-      x-runtime:
+      X-Runtime:
       - '0.048257'
-      x-rack-cache:
+      X-Rack-Cache:
       - miss
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-    body: ! '{"twitter_hashtag_streams":[{"twitter_hashtag_stream":{"id":2,"twitter_hashtag":"#monkeyfur","hashtag_twitter_statuses_count":50,"created_at":"2013-09-04T14:24:56-05:00","updated_at":"2013-09-04T14:24:56-05:00","href":"https://staging.checkd.in/api/v1/campaigns/58/twitter_hashtag_streams/2.json"}},{"twitter_hashtag_stream":{"id":3,"twitter_hashtag":"#banana","hashtag_twitter_statuses_count":1345,"created_at":"2013-09-04T14:26:45-05:00","updated_at":"2013-09-04T14:26:45-05:00","href":"https://staging.checkd.in/api/v1/campaigns/58/twitter_hashtag_streams/3.json"}}]}'
+    body:
+      encoding: UTF-8
+      string: ! '{"twitter_hashtag_streams":[{"twitter_hashtag_stream":{"id":2,"twitter_hashtag":"#monkeyfur","hashtag_twitter_statuses_count":50,"created_at":"2013-09-04T14:24:56-05:00","updated_at":"2013-09-04T14:24:56-05:00","href":"https://staging.checkd.in/api/v1/campaigns/58/twitter_hashtag_streams/2.json"}},{"twitter_hashtag_stream":{"id":3,"twitter_hashtag":"#banana","hashtag_twitter_statuses_count":1345,"created_at":"2013-09-04T14:26:45-05:00","updated_at":"2013-09-04T14:26:45-05:00","href":"https://staging.checkd.in/api/v1/campaigns/58/twitter_hashtag_streams/3.json"}}]}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

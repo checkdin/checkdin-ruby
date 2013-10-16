@@ -1,30 +1,36 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :post
+http_interactions:
+- request:
+    method: post
     uri: http://checkd-in-core.dev:80/api/v1/users/961/point_redemptions?client_id={client_id}&client_secret={client_secret}
-    body: 
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.2.9
-      content-length:
+      Content-Length:
       - '0'
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 400
       message: Bad Request
     headers:
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge
-      cache-control:
+      Cache-Control:
       - no-cache
-      x-request-id:
+      X-Request-Id:
       - ea0a3b18f8e5884d03ac06bab7e82482
-      x-runtime:
+      X-Runtime:
       - '0.021534'
-    body: ! '{"error":"missing_point_value"}'
+    body:
+      encoding: UTF-8
+      string: ! '{"error":"missing_point_value"}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

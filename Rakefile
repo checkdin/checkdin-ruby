@@ -16,6 +16,32 @@ end
 
 task :default => :spec
 
+namespace :ci do
+  desc "Prepare fresh environment for a specrun"
+  task 'setup' => [
+    'spec/credentials.yml',
+    :rspec_runtime_config,
+  ]
+
+  rule '.yml' => ['.yml.example'] do |t|
+    cp t.source, t.name
+  end
+
+  task :rspec_runtime_config do
+    rspec_config = <<-FORMAT
+    --order random
+    --color
+    --format documentation
+    --backtrace
+    --profile
+    FORMAT
+
+    File.open('.rspec', 'w') do |f|
+      f.write(rspec_config)
+    end
+  end
+end
+
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   require 'checkdin/version'

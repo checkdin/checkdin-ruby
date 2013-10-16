@@ -1,44 +1,50 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
+http_interactions:
+- request:
+    method: get
     uri: https://app.checkd.in:443/api/v1/votes?client_id={client_id}&client_secret={client_secret}&user_id=36
     body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.2.2
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/1.0.11
-      date:
+      Date:
       - Tue, 17 Apr 2012 15:57:37 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      status:
+      Status:
       - 200 OK
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
-      - "\"e5be3080253b60063d29411e65400701\""
-      cache-control:
+      Etag:
+      - ! '"e5be3080253b60063d29411e65400701"'
+      Cache-Control:
       - must-revalidate, private, max-age=0
-      x-runtime:
-      - "0.101455"
-      x-rack-cache:
+      X-Runtime:
+      - '0.101455'
+      X-Rack-Cache:
       - miss
-    body: "{\"total_pages\":1,\"votes\":[{\"vote\":{\"created_at\":\"2012-04-09T05:42:37-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:52:18-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}},{\"vote\":{\"created_at\":\"2012-04-08T06:52:12-05:00\",\"user\":{\"id\":36,\"href\":\"https://staging.checkd.in/api/v1/users/36.json\"},\"activity\":{\"id\":18881,\"href\":\"https://staging.checkd.in/api/v1/activities/18881.json\"}}}]}"
-    http_version: "1.1"
+    body:
+      encoding: UTF-8
+      string: ! '{"total_pages":1,"votes":[{"vote":{"created_at":"2012-04-09T05:42:37-05:00","user":{"id":36,"href":"https://staging.checkd.in/api/v1/users/36.json"},"activity":{"id":18881,"href":"https://staging.checkd.in/api/v1/activities/18881.json"}}},{"vote":{"created_at":"2012-04-08T06:52:18-05:00","user":{"id":36,"href":"https://staging.checkd.in/api/v1/users/36.json"},"activity":{"id":18881,"href":"https://staging.checkd.in/api/v1/activities/18881.json"}}},{"vote":{"created_at":"2012-04-08T06:52:12-05:00","user":{"id":36,"href":"https://staging.checkd.in/api/v1/users/36.json"},"activity":{"id":18881,"href":"https://staging.checkd.in/api/v1/activities/18881.json"}}}]}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

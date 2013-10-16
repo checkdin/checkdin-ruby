@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ! '{api_url}/campaigns/1/leaderboard?client_id={client_id}&client_secret={client_secret}'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - checkdin ruby gem 0.3.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 14 Oct 2013 14:14:52 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"433f10a21eb06534730dbea939b33d42"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c06c8849ed382a7be72d08c2b2a75a72
+      X-Runtime:
+      - '0.014317'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"total_pages":1,"point_accounts":[{"point_account":{"id":2,"balance":71,"lifetime_balance":0,"current_month_balance":0,"last_month_balance":0,"user":{"id":1,"client_uid":"got_whitelabel_uid_1","username":"primero","avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/1.json"},"campaign":{"name":"Check
+        In To Win!","description":"This is just the greatest.","start_date":"2013-07-16","end_date":"2014-01-12","href":"{api_url}/campaigns/1.json"},"point_account_level":null}}]}'
+    http_version: 
+  recorded_at: Mon, 14 Oct 2013 14:14:52 GMT
+recorded_with: VCR 2.5.0

@@ -1,44 +1,52 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
+http_interactions:
+- request:
+    method: get
     uri: https://app.checkd.in:443/api/v1/activities?client_id={client_id}&client_secret={client_secret}&limit=2
-    body: !!null
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - Ruby gem
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/0.8.54
-      date:
+      Date:
       - Tue, 14 Feb 2012 18:52:42 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
+      Etag:
       - ! '"68f9c440dfd3a3e933b876073f1f4194"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-runtime:
+      X-Runtime:
       - '0.114258'
-      x-rack-cache:
+      X-Rack-Cache:
       - miss
-    body: ! '{"total_pages":104,"activities":[{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/237.json"}},{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/236.json"}}]}
+    body:
+      encoding: UTF-8
+      string: ! '{"total_pages":104,"activities":[{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My
+        Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/237.json"}},{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My
+        Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/236.json"}}]}
 
 '
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0
