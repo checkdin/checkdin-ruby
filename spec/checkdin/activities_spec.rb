@@ -8,7 +8,7 @@ describe Checkdin::Activities do
 
   context "viewing a single activity" do
     use_vcr_cassette
-    let(:result) { @client.activity(236) }
+    let(:result) { @client.activity(1) }
 
     it "should make the activity's information available" do
       result.activity.type.should == "lbs_checkin"
@@ -20,7 +20,7 @@ describe Checkdin::Activities do
     end
 
     it "should include the user for the activity" do
-      result.activity.user.username.should == "krhoch"
+      result.activity.user.username.should == "primero"
     end
   end
 
@@ -30,7 +30,7 @@ describe Checkdin::Activities do
 
     it "should make a list of activities available" do
       activities_types = result.activities.collect{|a| a.activity.type}
-      activities_types.should == ["lbs_checkin","lbs_checkin"]
+      activities_types.should == ["twitter_status", "lbs_checkin"]
     end
 
     it "should only return the right number of results" do
@@ -39,33 +39,33 @@ describe Checkdin::Activities do
 
     it "should return the users" do
       activity_user_usernames = result.activities.collect{|a| a.activity.user.username }
-      activity_user_usernames.should == ["krhoch", "krhoch"]
+      activity_user_usernames.should == ["primero", "primero"]
     end
 
   end
 
   context "voting for an activity" do
     use_vcr_cassette
-    let(:result) { @client.add_vote_on_activity(18881) }
+    let(:result) { @client.add_vote_on_activity(2) }
 
     it "should make the activity's information available" do
       result.activity.type.should == "twitter_status"
     end
 
     it "should register the vote" do
-      result.activity.vote_count.should == 6
+      result.activity.vote_count.should == 1
     end
 
-    context "passing an email" do
+    context "passing a user id" do
       use_vcr_cassette
-      let(:result) { @client.add_vote_on_activity(18881, :user_id => 36)}
+      let(:result) { @client.add_vote_on_activity(1, :user_id => 2)}
 
       it "should register the vote as normal" do
-        result.activity.type.should == "twitter_status"
+        result.activity.type.should == "lbs_checkin"
       end
 
       it "should up the vote count as normal" do
-        result.activity.vote_count.should == 7
+        result.activity.vote_count.should == 1
       end
     end
   end

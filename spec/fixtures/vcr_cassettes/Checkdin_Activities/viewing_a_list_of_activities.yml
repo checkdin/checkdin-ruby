@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app.checkd.in:443/api/v1/activities?client_id={client_id}&client_secret={client_secret}&limit=2
+    uri: ! '{api_url}/activities?client_id={client_id}&client_secret={client_secret}&limit=2'
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - Ruby gem
+      - checkdin ruby gem 0.3.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,35 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx/0.8.54
       Date:
-      - Tue, 14 Feb 2012 18:52:42 GMT
+      - Wed, 16 Oct 2013 12:26:07 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"68f9c440dfd3a3e933b876073f1f4194"'
+      - ! '"d5b5240a6173f2d029df66d4cf5cc3b7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 437959543ef500d11a693e53d51dd75b
       X-Runtime:
-      - '0.114258'
-      X-Rack-Cache:
-      - miss
+      - '0.025028'
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: ! '{"total_pages":104,"activities":[{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My
-        Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/237.json"}},{"activity":{"type":"lbs_checkin","created_at":"2012-02-11T10:27:21-06:00","acted_on":{"type":"place","message":null,"name":"My
-        Shop","address":"1500 21st Ave S","city":"Nashville","state":"TN","zip":"37212","latitude":36.1395781,"longitude":-86.800412,"phone":"","open_hours":""},"user":{"id":187,"username":"krhoch","avatar_url":"https://prod-checkdin-user.s3.amazonaws.com/uploads/187/ROPQUJ0DZBN00OQB.jpg","href":"https://app.checkd.in/api/v1/activities.json?user_id=187"},"href":"https://app.checkd.in/api/v1/activities/236.json"}}]}
+      encoding: US-ASCII
+      string: ! '{"total_pages":1,"activities":[{"activity":{"type":"twitter_status","id":2,"created_at":"2013-10-16T07:25:00-05:00","acted_on":{"type":"twitter_status","tweet_fk":"1","status":"I
+        has got a tweet","photo_url":null,"photo_thumbnail_url":null},"user":{"id":1,"client_uid":"got_whitelabel_uid_1","username":"primero","avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/1.json"},"href":"{api_url}/activities/2.json","vote_count":0,"promotion":{"title":"Do
+        be kind and share this status","id":2,"href":"{api_url}/promotions/2.json"}}},{"activity":{"type":"lbs_checkin","id":1,"created_at":"2013-10-16T07:25:00-05:00","source":null,"acted_on":{"type":"place","message":"Hey
+        I checkd in","name":"My Shop","address":"123 Spooner Street","city":"Plesantville","state":"TN","zip":"10001","latitude":35.123,"longitude":-85.456,"phone":"1234567890","open_hours":null},"user":{"id":1,"client_uid":"got_whitelabel_uid_1","username":"primero","avatar_url":null,"external_avatar_url":null,"href":"{api_url}/users/1.json"},"href":"{api_url}/activities/1.json","vote_count":0,"promotion":{"title":"Get
+        a FREE coffee for every 5 check ins!","id":1,"href":"{api_url}/promotions/1.json"}}}]}
 
 '
-    http_version: '1.1'
-  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+    http_version: 
+  recorded_at: Wed, 16 Oct 2013 12:26:07 GMT
 recorded_with: VCR 2.5.0

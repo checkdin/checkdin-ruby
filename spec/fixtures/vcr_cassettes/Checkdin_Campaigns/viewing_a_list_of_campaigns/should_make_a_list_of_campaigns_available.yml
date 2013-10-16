@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - checkdin ruby gem 0.3.7
+      - checkdin ruby gem 0.3.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 14 Oct 2013 12:34:56 GMT
+      - Wed, 16 Oct 2013 11:21:09 GMT
       Status:
       - 200 OK
       Connection:
@@ -29,19 +29,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"b6731b67dc840b1645762854d80772c4"'
+      - ! '"db2820b6b8424d2a316a4db0c22a66b9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9967e1ddcb16691cb20f31193b37d00e
+      - f66ee977f2aa3cc2c87a51c8a42d3731
       X-Runtime:
-      - '0.011291'
+      - '0.011275'
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
       string: ! '[{"campaign":{"id":1,"name":"Check In To Win!","description":"This
-        is just the greatest.","get_clicky_site_id":null,"start_date":"2013-07-16","end_date":"2014-01-12","href":"{api_url}/campaigns/1.json","promotions":{"count":1,"href":"{api_url}/promotions.json?campaign_id=1"},"leaderboard":{"href":"{api_url}/campaigns/1/leaderboard.json"}}}]'
+        is just the greatest.","get_clicky_site_id":null,"start_date":"2013-07-18","end_date":"2014-01-14","href":"{api_url}/campaigns/1.json","promotions":{"count":1,"href":"{api_url}/promotions.json?campaign_id=1"},"leaderboard":{"href":"{api_url}/campaigns/1/leaderboard.json"}}}]'
     http_version: 
-  recorded_at: Mon, 14 Oct 2013 12:34:56 GMT
+  recorded_at: Wed, 16 Oct 2013 11:21:09 GMT
 recorded_with: VCR 2.5.0
