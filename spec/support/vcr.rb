@@ -19,3 +19,7 @@ VCR.configure do |config|
   # ignore hostname when finding a matching request in the VCR recording
   config.default_cassette_options[:match_requests_on] = [ :method, :path ]
 end
+
+RSpec.configure do |config|
+  config.extend VCR::RSpec::Macros
+end
