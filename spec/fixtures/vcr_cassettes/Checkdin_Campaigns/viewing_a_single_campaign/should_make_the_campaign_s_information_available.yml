@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ! '{api_url}/campaigns/1?client_id={client_id}&client_secret={client_secret}'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - checkdin ruby gem 0.3.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 14 Oct 2013 12:34:56 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"6e75faab0f6667440465e46cb2787e08"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb76a25c907ee7a2da157b60d9f6a061
+      X-Runtime:
+      - '0.266572'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"campaign":{"id":1,"name":"Check In To Win!","description":"This
+        is just the greatest.","get_clicky_site_id":null,"start_date":"2013-07-16","end_date":"2014-01-12","href":"{api_url}/campaigns/1.json","promotions":[{"promotion":{"id":1,"type":"promotion_lbs_checkin","title":"Get
+        a FREE coffee for every 5 check ins!","description":null,"state":"editable","terms":null,"above_21_only":false,"starts_at":"2013-10-11T17:00:00-05:00","ends_at":"2013-11-12T17:00:00-06:00","won_rewards":{"count":0,"href":"{api_url}/won_rewards.json?promotion_id=1"},"place_groups":[],"href":"{api_url}/promotions/1.json","prerequisites":[]}}],"point_account_levels":[]}}'
+    http_version: 
+  recorded_at: Mon, 14 Oct 2013 12:34:56 GMT
+recorded_with: VCR 2.5.0

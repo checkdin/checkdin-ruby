@@ -1,46 +1,52 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
+---
+http_interactions:
+- request:
+    method: get
     uri: https://app.checkd.in:443/api/v1/users/7835/authentications/19479?client_id={client_id}&client_secret={client_secret}
-    body: 
-    headers: 
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-      user-agent: 
+      User-Agent:
       - checkdin ruby gem 0.2.5
-      accept-encoding: 
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      server: 
+    headers:
+      Server:
       - nginx/1.0.11
-      date: 
+      Date:
       - Mon, 25 Jun 2012 15:35:32 GMT
-      content-type: 
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding: 
+      Transfer-Encoding:
       - chunked
-      connection: 
+      Connection:
       - keep-alive
-      status: 
+      Status:
       - 200 OK
-      strict-transport-security: 
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible: 
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag: 
-      - "\"7dc6683e23019b9f9c4576c7e4937529\""
-      cache-control: 
+      Etag:
+      - ! '"7dc6683e23019b9f9c4576c7e4937529"'
+      Cache-Control:
       - must-revalidate, private, max-age=0
-      x-request-id: 
+      X-Request-Id:
       - 7aed097cf7ee41e3325545ad11d1e548
-      x-runtime: 
-      - "1.756168"
-      x-rack-cache: 
+      X-Runtime:
+      - '1.756168'
+      X-Rack-Cache:
       - miss
-    body: "{\"authentication\":{\"provider\":\"twitter\",\"token_state\":\"fresh\",\"uid\":\"5930881311\",\"nickname\":\"demo\"}}"
-    http_version: "1.1"
+    body:
+      encoding: UTF-8
+      string: ! '{"authentication":{"provider":"twitter","token_state":"fresh","uid":"5930881311","nickname":"demo"}}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

@@ -1,59 +1,64 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
+http_interactions:
+- request:
+    method: get
     uri: https://app.checkd.in:443/api/v1/users/187?client_id={client_id}&client_secret={client_secret}
-    body: !!null
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - Ruby gem
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/0.8.54
-      date:
+      Date:
       - Tue, 14 Feb 2012 19:09:21 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
+      Etag:
       - ! '"cd8e76b1364d66de77c58ed78224a65e"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-runtime:
+      X-Runtime:
       - '0.042271'
-      x-rack-cache:
+      X-Rack-Cache:
       - miss
-    body: ! '{"user":{"id":187,"username":"krhoch","created_at":"2012-01-26T08:16:48-06:00","first_name":null,"last_name":null,"birth_date":"1986-05-29","gender":"male","authentications":[{"authentication":{"provider":"foursquare","token_state":"fresh"}}],"campaigns":[{"campaign":{"name":"Check
-      In With ","description":"Check in with to win free coffee and
-      more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json","points":0,"won_rewards":[{"won_reward":{"points_when_rewarded":null,"points_needed":null,"created_at":"2012-01-27T09:03:21-06:00","updated_at":"2012-01-27T09:03:21-06:00","promotion":{"title":"Check
-      in and get breakfast for 99 cents!","description":"Check in at our new location
-      at the downtown and receive a bagel with cream cheese
-      or sausage biscuit for only 99 cents!","terms":"*Offer only applies at locations","above_21_only":false,"ends_at":"2012-10-16T07:51:32-05:00","href":"https://app.checkd.in/api/v1/promotions/7.json","type":"promotion_lbs_checkin","place_groups":[{"place_group":{"name":"Stores","href":"https://app.checkd.in/api/v1/place_groups/2.json"}}],"reward":{"private_delivery_description":"Thanks
-      for checking-in with! You have earned your first discount
-      - a 99\u00a2 bagel with cream cheese or a 99\u00a2 sausage and biscuit! Bring
-      a printed copy of this notification or show this screen on your smart-phone
-      to take advantage of this delicious offer!\n\n","public_delivery_description":"I
-      just got breakfast for 99 cents by checking in","single_delivery":false,"type":"badge_reward","reward_file":"FreeBreakfastBarcode.png"},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":1,"human_readable":"Rewarded
-      once when a user reaches 1 relevant actions or points."}},"badge_reward":{"private_delivery_description":"Thanks
-      for checking-in with You have earned your first discount
-      - a 99\u00a2 bagel with cream cheese or a 99\u00a2 sausage and biscuit! Bring
-      a printed copy of this notification or show this screen on your smart-phone
-      to take advantage of this delicious offer!\n\nDon''t forget to Like us on Facebook
-      to earn another great reward from !","public_delivery_description":"I
-      just got breakfast for 99 cents by checking in at","single_delivery":false,"type":"badge_reward","reward_file":"FreeBreakfastBarcode.png"}}}]}}]}}'
+    body:
+      encoding: UTF-8
+      string: ! '{"user":{"id":187,"username":"krhoch","created_at":"2012-01-26T08:16:48-06:00","first_name":null,"last_name":null,"birth_date":"1986-05-29","gender":"male","authentications":[{"authentication":{"provider":"foursquare","token_state":"fresh"}}],"campaigns":[{"campaign":{"name":"Check
+        In With ","description":"Check in with to win free coffee and more!","start_date":"2011-10-17","end_date":"2012-10-17","href":"https://app.checkd.in/api/v1/campaigns/2.json","points":0,"won_rewards":[{"won_reward":{"points_when_rewarded":null,"points_needed":null,"created_at":"2012-01-27T09:03:21-06:00","updated_at":"2012-01-27T09:03:21-06:00","promotion":{"title":"Check
+        in and get breakfast for 99 cents!","description":"Check in at our new location
+        at the downtown and receive a bagel with cream cheese or sausage biscuit for
+        only 99 cents!","terms":"*Offer only applies at locations","above_21_only":false,"ends_at":"2012-10-16T07:51:32-05:00","href":"https://app.checkd.in/api/v1/promotions/7.json","type":"promotion_lbs_checkin","place_groups":[{"place_group":{"name":"Stores","href":"https://app.checkd.in/api/v1/place_groups/2.json"}}],"reward":{"private_delivery_description":"Thanks
+        for checking-in with! You have earned your first discount - a 99\u00a2 bagel
+        with cream cheese or a 99\u00a2 sausage and biscuit! Bring a printed copy
+        of this notification or show this screen on your smart-phone to take advantage
+        of this delicious offer!\n\n","public_delivery_description":"I just got breakfast
+        for 99 cents by checking in","single_delivery":false,"type":"badge_reward","reward_file":"FreeBreakfastBarcode.png"},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":1,"human_readable":"Rewarded
+        once when a user reaches 1 relevant actions or points."}},"badge_reward":{"private_delivery_description":"Thanks
+        for checking-in with You have earned your first discount - a 99\u00a2 bagel
+        with cream cheese or a 99\u00a2 sausage and biscuit! Bring a printed copy
+        of this notification or show this screen on your smart-phone to take advantage
+        of this delicious offer!\n\nDon''t forget to Like us on Facebook to earn another
+        great reward from !","public_delivery_description":"I just got breakfast for
+        99 cents by checking in at","single_delivery":false,"type":"badge_reward","reward_file":"FreeBreakfastBarcode.png"}}}]}}]}}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

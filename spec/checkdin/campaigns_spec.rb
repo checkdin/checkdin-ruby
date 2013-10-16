@@ -6,9 +6,8 @@ describe Checkdin::Campaigns do
     @client = Checkdin::Client.new(TestCredentials.client_args)
   end
 
-  context "viewing a single campaign" do
-    use_vcr_cassette
-    let(:result) { @client.campaign(2) }
+  context "viewing a single campaign", :vcr do
+    let(:result) { @client.campaign(1) }
 
     it "should make the campaign's information available" do
       result.campaign.name.should == "Check In To Win!"
@@ -20,8 +19,7 @@ describe Checkdin::Campaigns do
     end
   end
 
-  context "viewing a list of campaigns" do
-    use_vcr_cassette
+  context "viewing a list of campaigns", :vcr do
     let(:result) { @client.campaigns }
 
     it "should make a list of campaigns available" do

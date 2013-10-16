@@ -1,35 +1,41 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :post
+http_interactions:
+- request:
+    method: post
     uri: http://core.dev:80/api/v1/promotions/custom_activity?campaign_id=37&client_id={client_id}&client_secret={client_secret}&promotion%5Bcustom_activity_node%5D%5Bname%5D=my-custom&promotion%5Breward%5D%5Breward_points%5D=27&promotion%5Breward%5D%5Btype%5D=point_reward&promotion%5Btitle%5D=Some%20awesome%20promotion&promotion%5Btrigger_schedule%5D%5Binterval%5D=5&promotion%5Btrigger_schedule%5D%5Brewarding%5D=once&promotion%5Btrigger_schedule%5D%5Bwinner_picked%5D=activity_interval
-    body: 
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.3.0
-      content-length:
+      Content-Length:
       - '0'
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 201
       message: Created
     headers:
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge
-      etag:
+      Etag:
       - ! '"92b63ebac3e992781dd2b7327eebe1cc"'
-      cache-control:
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-request-id:
+      X-Request-Id:
       - cb9c84ae1f707e2c8adb78ede25f5172
-      x-runtime:
+      X-Runtime:
       - '0.060565'
-    body: ! '{"promotion":{"id":292,"type":"promotion_custom_activity","title":"Some
-      awesome promotion","description":null,"state":"trial","terms":null,"above_21_only":false,"starts_at":"2012-08-24T00:00:00-05:00","ends_at":"2013-08-24T23:59:59-05:00","won_rewards":{"count":0,"href":"{api_url}/won_rewards.json?promotion_id=292"},"custom_activity_node":{"name":"my-custom","id":71},"campaign":{"name":"BCKSTGR
-      Campaign","description":"BCKSTGR Campaign.","start_date":"2012-08-24","end_date":"2013-08-24","href":"{api_url}/campaigns/37.json"},"reward":{"type":"point_reward","single_delivery":false,"private_delivery_description":null,"public_delivery_description":null,"reward_points":27},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":5,"maximum_daily_actions":null,"human_readable":"Rewarded
-      once when a user reaches 5 relevant actions or points."},"href":"{api_url}/promotions/292.json","prerequisites":[]}}'
+    body:
+      encoding: UTF-8
+      string: ! '{"promotion":{"id":292,"type":"promotion_custom_activity","title":"Some
+        awesome promotion","description":null,"state":"trial","terms":null,"above_21_only":false,"starts_at":"2012-08-24T00:00:00-05:00","ends_at":"2013-08-24T23:59:59-05:00","won_rewards":{"count":0,"href":"{api_url}/won_rewards.json?promotion_id=292"},"custom_activity_node":{"name":"my-custom","id":71},"campaign":{"name":"BCKSTGR
+        Campaign","description":"BCKSTGR Campaign.","start_date":"2012-08-24","end_date":"2013-08-24","href":"{api_url}/campaigns/37.json"},"reward":{"type":"point_reward","single_delivery":false,"private_delivery_description":null,"public_delivery_description":null,"reward_points":27},"trigger_schedule":{"rewarding":"once","winner_picked":"activity_interval","interval":5,"maximum_daily_actions":null,"human_readable":"Rewarded
+        once when a user reaches 5 relevant actions or points."},"href":"{api_url}/promotions/292.json","prerequisites":[]}}'
     http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

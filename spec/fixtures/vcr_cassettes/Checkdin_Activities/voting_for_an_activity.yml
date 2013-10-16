@@ -1,48 +1,56 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :post
+http_interactions:
+- request:
+    method: post
     uri: https://app.checkd.in:443/api/v1/activities/18881/vote?client_id={client_id}&client_secret={client_secret}
     body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      accept:
+      Accept:
       - application/json
-      user-agent:
+      User-Agent:
       - checkdin ruby gem 0.2.1
-      content-length:
-      - "0"
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+      Content-Length:
+      - '0'
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      server:
+      Server:
       - nginx/1.0.11
-      date:
+      Date:
       - Mon, 09 Apr 2012 10:38:50 GMT
-      content-type:
+      Content-Type:
       - application/json; charset=utf-8
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      status:
+      Status:
       - 200 OK
-      strict-transport-security:
+      Strict-Transport-Security:
       - max-age=31536000
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      etag:
-      - "\"78c7474e01ca50b8cfc238ad7974fed1\""
-      cache-control:
+      Etag:
+      - ! '"78c7474e01ca50b8cfc238ad7974fed1"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      set-cookie:
-      - _checkdin_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWQ3MmVkYzllYzNhZWVhYmU4ZmQ2YjNlN2IxZjEyMjE2BjsAVA%3D%3D--8c08feb9944b93e628e7740a373d79e5adb6bd73; domain=app.checkd.in; path=/; HttpOnly; secure
-      x-runtime:
-      - "0.039170"
-      x-rack-cache:
+      Set-Cookie:
+      - _checkdin_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJWQ3MmVkYzllYzNhZWVhYmU4ZmQ2YjNlN2IxZjEyMjE2BjsAVA%3D%3D--8c08feb9944b93e628e7740a373d79e5adb6bd73;
+        domain=app.checkd.in; path=/; HttpOnly; secure
+      X-Runtime:
+      - '0.039170'
+      X-Rack-Cache:
       - invalidate, pass
-    body: |
-      {"activity":{"type":"twitter_status","id":18881,"created_at":"2012-02-21T16:08:55-06:00","acted_on":{"type":"twitter_status","tweet_fk":172080368760000512,"status":"Check out what I purchased at #mynordstrom http://t.co/DKUXa41E","photo_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg","photo_thumbnail_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg:thumb"},"user":{"id":36,"username":"demomattloadtest","avatar_url":null,"href":"https://app.checkd.in/api/v1/activities.json?user_id=36"},"vote_count":6}}
+    body:
+      encoding: UTF-8
+      string: ! '{"activity":{"type":"twitter_status","id":18881,"created_at":"2012-02-21T16:08:55-06:00","acted_on":{"type":"twitter_status","tweet_fk":172080368760000512,"status":"Check
+        out what I purchased at #mynordstrom http://t.co/DKUXa41E","photo_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg","photo_thumbnail_url":"https://p.twimg.com/AmNaLwUCEAIt1v3.jpg:thumb"},"user":{"id":36,"username":"demomattloadtest","avatar_url":null,"href":"https://app.checkd.in/api/v1/activities.json?user_id=36"},"vote_count":6}}
 
-    http_version: "1.1"
+'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0

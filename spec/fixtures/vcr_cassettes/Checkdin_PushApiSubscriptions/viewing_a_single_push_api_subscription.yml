@@ -1,32 +1,38 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
+---
+http_interactions:
+- request:
+    method: get
     uri: http://checkd-in-core.dev:80/api/v1/push_api_subscriptions/1?client_id={client_id}&client_secret={client_secret}
-    body: 
-    headers: 
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-      user-agent: 
+      User-Agent:
       - checkdin ruby gem 0.2.8
-      accept-encoding: 
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      content-type: 
+    headers:
+      Content-Type:
       - application/json; charset=utf-8
-      x-ua-compatible: 
+      X-Ua-Compatible:
       - IE=Edge
-      etag: 
-      - "\"9d54b3e26adb43319412054e434f95b4\""
-      cache-control: 
+      Etag:
+      - ! '"9d54b3e26adb43319412054e434f95b4"'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      x-request-id: 
+      X-Request-Id:
       - 229fde8356e2089293d1970696570ade
-      x-runtime: 
-      - "0.135453"
-    body: "{\"push_api_subscription\":{\"push_url\":\"http://test.com\",\"state\":\"enabled\",\"reward_won_monitored\":false,\"activity_created_monitored\":true,\"user_created_monitored\":false,\"secret\":\"6dec79a3034468c530fc\",\"campaign\":null}}"
-    http_version: "1.1"
+      X-Runtime:
+      - '0.135453'
+    body:
+      encoding: UTF-8
+      string: ! '{"push_api_subscription":{"push_url":"http://test.com","state":"enabled","reward_won_monitored":false,"activity_created_monitored":true,"user_created_monitored":false,"secret":"6dec79a3034468c530fc","campaign":null}}'
+    http_version: '1.1'
+  recorded_at: Thu, 05 Sep 2013 13:03:05 GMT
+recorded_with: VCR 2.5.0
